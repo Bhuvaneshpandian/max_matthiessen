@@ -1,0 +1,18 @@
+.header-container {
+  .row {
+    background-color: #00366b;
+  }
+  .logo {
+    margin: 14px;
+  }
+  .col {
+    margin: 14px;
+  }
+  .images-tag {
+    float: right;
+  }
+
+  .qus-img {
+    padding-right: 22px;
+  }
+}

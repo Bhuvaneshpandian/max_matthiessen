@@ -1,0 +1,201 @@
+<div class="popup-overlay" id="popupOverlay">
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <div class="row">
+        <div class="col-12 nav-image" (click)="onBackClik()">
+          <img src="../../assets/Line.png" />
+          <div class="rec-label" *ngIf="!canIncreasePension"
+          >Recommendation</div>
+          <div class="rec-label" *ngIf="canIncreasePension"
+          >Increase Pension
+        </div>
+        </div>
+        <div class="col-4 mt-3 mb-3">
+          <img src="../../assets/left-arrow.png" height="30px" (click)="onBackClik()" />
+        </div>
+      </div>
+
+
+      <div *ngIf="!canIncreasePension">
+        <div class="row content" (click)="onclick()">
+          <div class="col">
+            <div class="row">
+              <div class="col-10">
+                <label class="content-1 pt-2"
+                  >Increase monthly pension contribution</label
+                >
+                <br />
+                <label class="content-2 pt-2 pb-2"
+                  >Our analysis shows that you have the capacity to increase
+                  your monthly pension contributions by 10% will bolster your
+                  retirement savings, ensuring a more comfortable future.</label
+                >
+              </div>
+              <div class="col-2 arrow">
+                <img src="../../assets/nav.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row content">
+          <div class="col">
+            <div class="row">
+              <div class="col-10">
+                <label class="content-1 pt-2"
+                  >Increase Emergency Fund Allocation</label
+                >
+                <br />
+                <label class="content-2 pt-2 pb-2"
+                  >Allocating an additional 5% to his emergency fund will
+                  provide greater financial security, especially considering his
+                  risk-averse approach to investing.</label
+                >
+              </div>
+              <div class="col-2 arrow">
+                <img src="../../assets/nav.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row content">
+          <div class="col">
+            <div class="row">
+              <div class="col-10">
+                <label class="content-1 pt-2"
+                  >Tax-Efficient Investing Strategy</label
+                >
+                <br />
+                <label class="content-2 pt-2 pb-2"
+                  >Implementing a tax-efficient strategy by maximizing
+                  contributions to ISAs or SIPPs can optimize his tax savings
+                  and enhance overall portfolio growth, aligning with his goal
+                  of minimizing tax liabilities.</label
+                >
+              </div>
+              <div class="col-2 arrow">
+                <img src="../../assets/nav.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row content">
+          <div class="col">
+            <div class="row">
+              <div class="col-10">
+                <label class="content-1 pt-2"
+                  >Book an advisor appointment
+                </label>
+                <br />
+                <label class="content-2 pt-2 pb-2"
+                  >Our advisors can review your current portfolio, assess your
+                  risk tolerance, and develop a tailored plan to help you
+                  achieve your financial objectives more effectively.</label
+                >
+              </div>
+              <div class="col-2 arrow">
+                <img src="../../assets/nav.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="canIncreasePension">
+        <!-- <div class="row bar-chart">
+          <div class="col-12 chart-container">
+            <canvas  id="MyChart" >{{ chart }}</canvas>
+            <canvasjs-chart [options]="chartOptions" [styles]="{width: '50%', height:'150px,margin-right: auto; margin-top:auto'}"></canvasjs-chart>
+          </div>
+          <div class="pension-conatiner">
+            <span>Pension</span>
+            <br>
+            <span>$280<small>/month</small></span>
+          </div>
+        </div> -->
+
+        <div class="row contnt" style="    margin-top: 114px;padding-top: 157px;">
+
+          <div style="    position: absolute;
+          top: 65px;">
+            <canvasjs-chart [options]="chartOptions" [styles]="{width: '70%', height:'250px'}"></canvasjs-chart>
+            <div style="position: relative;
+            bottom: 149px;">
+              <div class="text-center" style="    color: #232323;
+              font-size: 19px;
+          ">Pension</div>
+              <div class="text-center">
+                <label style="font-size: 16px;
+                color: #232323;
+                font-weight: 600;"> $280</label>
+               <span class="pl-2" style="font-size: 10px;">/month</span></div>
+            </div>
+          </div>
+
+
+
+
+          <div class="col-12 increase">
+            <div class="col-12 total-pension">
+              <span class="large">Total Pension Amount</span>
+              <span class="medium">(Till Date)</span>
+              <span class="price">$ 16800</span>
+            </div>
+
+            <div class="col-12 foo">
+              <span class="large">Recommended</span>
+              <span class="medium">(by 2045)</span>
+              <span class="price">$ 90720</span>
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="col-12 fooetr-text">
+            Increase your monthly pension contributions by 10% you achieve your
+            retirement savings goals under pension category.
+          </div>
+        </div>
+
+        <div class="row range-conatiner">
+          <div class="col-10 pt-4">Pension Contribution</div>
+          <div class="col-2 pt-4">
+            %{{range}}
+            <hr />
+          </div>
+          <div class="col-12 pt-4 mb-4">
+            <input
+              style="width: 100%"
+              type="range"
+              min="0"
+              max="25"
+              value="7"
+              class="slider"
+              id="myRange"
+              [(ngModel)]="range"
+            />
+            <div class="scale">
+              <div><span class="line">|</span> 0</div>
+              <div><span class="line">|</span>5</div>
+              <div><span class="line">|</span>10</div>
+              <div><span class="line">|</span>15</div>
+              <div><span class="line">|</span>20</div>
+              <div><span class="line">|</span>25</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-12">
+            <button class="apply-btn" (click)="applyClick()">Apply</button>
+          </div>
+        </div>
+
+        <div class="row mt-5 text-center">
+          <div class="col-12">
+          <span>Not sure? </span>
+          <span>Talk to to us</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

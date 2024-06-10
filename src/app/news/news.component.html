@@ -1,0 +1,18 @@
+<div class="row main">
+  <div class="col-12">
+    <div class="portfolio-summary">News</div>
+  </div>
+  <div *ngFor="let news of newsList" class="upcoming-conatiner">
+      <div>
+        <img src="{{ news.image }}" alt="" />
+      </div>
+      <div>
+        <span class="news-label">{{ news.heading }}</span>
+        <br />
+        <span class="detail-news">{{ news.news }}</span>
+      </div>
+    </div>
+    <hr />
+  </div>
+
+

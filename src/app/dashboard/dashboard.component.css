@@ -1,0 +1,44 @@
+
+
+
+
+.header-text {
+  font-size: 22px;
+  color: #6a6565;
+}
+
+.small-text {
+  font-size: 16px;
+  color: #6a6565;
+}
+
+.content {
+  border: 1px solid #00366B;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.header-content{
+  margin: 15px;
+}
+
+.content{
+  margin: 24px;
+}
+
+.content-1{
+  color: #00366B;
+  font-size: 16px;
+  font-weight: 500;
+}
+.content-2{
+  color:#00366B;
+  font-size: 12px;
+  font-weight: 200;
+  display: inline-block;
+}
+
+.arrow{
+  text-align: center;
+  margin: auto;
+}

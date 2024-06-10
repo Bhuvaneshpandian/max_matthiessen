@@ -1,0 +1,55 @@
+<div *ngIf="canShowThis" class="row prof">
+  <div class="col-12" style="margin-top: 19px">
+    <div class="portfolio-summary">
+      Portfolio Recommendation
+      <img src="../../assets/cancel.png" style="float: right" />
+    </div>
+  </div>
+
+  <div class="col-4" style="margin-top: auto; margin-bottom: auto">
+    <img src="../../assets/prof-logo.png" />
+  </div>
+  <div
+    class="col-8"
+    style="margin-top: auto; margin-bottom: auto; padding-top: 16px"
+  >
+    <span style="color: #ffffff">Adjustments to your portfolio.</span>
+    <br />
+    <span style="color: #ffffff; font-size: 10px"
+      >Based on your recent financial goals and earlier consultation with your
+      advisor, we recommend making adjustments to your portfolio.</span
+    >
+    <div class="mb-3 mt-2">
+      <button
+        style="background-color: #91c60f;
+        color: #ffffff;
+        margin-right: 10px;
+        font-size: 14px;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        border: none;
+        border-radius: 5px;"
+
+        (click)="onViewClick()"
+      >
+        View Options
+      </button>
+      <button
+        style="
+          border: 1px solid #91c60f;
+          color: #91c60f;
+          background-color: unset;
+          font-size: 14px;
+
+        padding-top: 7px;
+        padding-bottom: 7px;
+        border-radius: 5px;
+        "
+      >
+        Talk to Advisor
+      </button>
+    </div>
+  </div>
+</div>

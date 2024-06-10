@@ -1,0 +1,55 @@
+.main{
+  background-color: #FFFFFF;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 16px;  border-radius: 5px;
+}
+
+.bar{
+  display: grid;
+  grid-template-columns: 50% 10% 40%;
+  column-gap: 10px;
+  margin-left: 16px;
+}
+
+.equ{
+  height: 20px;
+  width: 20px;
+  border-radius: 5px;
+  margin-top: 12px;
+}
+
+
+.overview{
+  font-size: 18px;
+  color: #000000;
+  font-weight: 500;
+
+}
+
+.float-right{
+float: right;
+}
+
+
+.stocks{
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  text-align: center;
+}
+
+.label{
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.sub{
+  display: block;
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+    /* margin-top: 12px; */
+    background-color: aqua;
+    margin-left: 35px;
+    margin-top: 10px;
+}

@@ -1,0 +1,52 @@
+.main{
+  background-color: #FFFFFF;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 16px;  border-radius: 5px;
+}
+
+.col{
+  padding: 28px;
+}
+
+.payment-amount{
+  font-size: 16px;
+  display: inline-block;
+  color: #ED0000;
+  text-align: end;
+}
+
+.tax-amount{
+  font-size: 12px;
+ color: #848998;
+}
+.payment-label{
+  font-size: 16px;
+  color: #000000;
+}
+
+.upcoming-conatiner{
+
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  grid-column-gap: 18px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+
+.insights{
+  color: #261AB1;
+  text-align: center;
+
+}
+
+.portfolio-summary{
+  color: #001B3C;
+  font-size: 18px;
+  font-weight: 400;
+  font-size: 18px;
+  color: #000000;
+  font-weight: 500;
+  padding-top: 18px;
+}
