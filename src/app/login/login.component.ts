@@ -32,6 +32,7 @@ export class LoginComponent {
 
   async onOpenClick(){
 
+    this.router.navigate(["/dashboard"])
 
 
 
