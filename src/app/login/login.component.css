@@ -1,6 +1,6 @@
 .login-conatiner{
   background-color: #001B3C;
-  height: 931px;
+  height: 100vh;
 }
 
 .heading{
@@ -14,6 +14,38 @@
   color: #FFFFFF;
   font-weight: 300;
   padding: 11px;
+}
+
+.max-button{
+  width: 90%;
+  height: 54px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.bg-color{
+  background-color:  #261AB1;
+  color: #FFFFFF;
+}
+
+.footer-text{
+  color: #FFFFFF;
+}
+
+.footer-conatiner{
+  position: absolute;
+  bottom: 58px;
+  left: 30px;
+}
+
+.try-demo{
+color: #FFFFFF;
+font-size: 21px;
+}
+
+.bg-white{
+  background-color: #FFFFFF;
+  color: #001B3C;
 }
 
 

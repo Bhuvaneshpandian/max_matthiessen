@@ -1,10 +1,9 @@
-.header-container {
-  .row {
-    background-color: #00366b;
+
+  .header {
+    background-color: #001B3C;
+  
   }
-  .logo {
-    margin: 14px;
-  }
+
   .col {
     margin: 14px;
   }
@@ -15,4 +14,7 @@
   .qus-img {
     padding-right: 22px;
   }
-}
+
+
+
+

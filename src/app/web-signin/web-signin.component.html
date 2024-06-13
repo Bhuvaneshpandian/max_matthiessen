@@ -1,0 +1,68 @@
+<div class="row signin-conatiner">
+  <div class="col-7">
+    <div class="col-12 mt-4">
+      <label style=" font-size: 17px;
+      font-weight: 500;">Sign in</label>
+      <br />
+      <label style="font-size: 10px;">Log in to manage your fund savings</label>
+    </div>
+    <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+
+    <div class="col-12 mt-3">
+      <input id="bankId" type="radio" value="bankId" formControlName="authenticationType">
+      <label style="padding-left:10px" class="ml-2" for="bankId">Bank Id</label>
+      <span style="padding-left:10px">
+        <input id="userId" type="radio"  value="userId" formControlName="authenticationType">
+        <label style="padding-left:10px" class="ml-2" for="userId">User Id</label></span>
+    </div>
+
+
+    <div class="col-12 mt-3">
+     <div style="font-size: 10px;">Personal or Organization Number</div>
+     <input type="text" style="width:34%;font-size: 17px;
+     font-weight: 400;" formControlName="userName">
+     <div *ngIf="signInForm.get('userName')?.invalid">
+      <div style="color: red;font-size: 8px;">Personal or Organization Number is required.</div>
+    </div>
+    </div>
+
+
+    <div class="col-12 mt-3">
+      <div style="font-size: 10px;">Password</div>
+      <input type="text"  style="width:34%;font-size: 17px;
+      font-weight: 400;" formControlName="password">
+       <div *ngIf="signInForm.get('password')?.invalid">
+        <div style="color: red;font-size: 8px;">Password is required.</div>
+        </div>
+   </div>
+
+   <div class="col-12 mt-3">
+    <button style="width:34%;    background-color: #261AB1;
+    color: #ffffff;">Sign in</button>
+    <br>
+    <label class="mt-2" style="color: #261AB1;font-size: 12px;font-weight: 500;">Forgot Password</label>
+    <br>
+    <label class="mt-3 mb-3" style="font-size: 12px;font-weight: 500;">Are you missing account? <span style="color: #261AB1;font-size: 12px;font-weight: 500;">Become a client</span></label>
+
+ </div>
+
+ </form>
+
+
+  </div>
+
+
+
+
+
+
+  <div class="col-5 text-center mt-5">
+    <div>
+      Consolidates all your pensions, insurances, and investments into one
+      clear, comprehensive view, enabling detailed insights and personalized
+      financial planning.
+    </div>
+
+    <img src="assets//laptop.jpg" width="400px" Height="200px" />
+  </div>
+</div>

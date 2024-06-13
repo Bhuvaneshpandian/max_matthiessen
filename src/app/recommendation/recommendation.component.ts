@@ -57,4 +57,8 @@ export class RecommendationComponent  {
     this.canIncreasePension = false;
     this.emitRecommendationChange();
   }
+
+  onRangeChange(){
+    alert("hi")
+  }
 }

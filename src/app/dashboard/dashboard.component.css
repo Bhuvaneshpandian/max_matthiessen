@@ -2,9 +2,10 @@
 
 
 
-.header-text {
+.-text {
   font-size: 22px;
   color: #6a6565;
+  font-weight: 400;
 }
 
 .small-text {
@@ -24,21 +25,28 @@
 
 .content{
   margin: 24px;
+  background-color: #261AB1;
 }
 
 .content-1{
-  color: #00366B;
+  color: #FFFFFF;
   font-size: 16px;
   font-weight: 500;
 }
 .content-2{
-  color:#00366B;
+  color:#FFFFFF;
   font-size: 12px;
-  font-weight: 200;
+  font-weight: 500;
   display: inline-block;
 }
 
 .arrow{
   text-align: center;
   margin: auto;
+}
+
+.header-text{
+  font-size: 22px;
+    font-weight: 300;
+    color: #232323;
 }

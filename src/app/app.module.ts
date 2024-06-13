@@ -1,3 +1,7 @@
+
+
+// @ts-ignore
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,10 +22,11 @@ import { IncreasePensionComponent } from './increase-pension/increase-pension.co
 import { DonutChartComponent } from './donut-chart/donut-chart.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
-
-
-
-
+import { WebViewComponent } from './web-view/web-view.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { WebSigninComponent } from './web-signin/web-signin.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -42,6 +47,8 @@ import { LoginComponent } from './login/login.component';
     IncreasePensionComponent,
     DonutChartComponent,
     LoginComponent,
+    WebViewComponent,
+    WebSigninComponent,
 
 
   ],
@@ -50,6 +57,9 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     CanvasJSAngularChartsModule,
     FormsModule,
+    MatTabsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule
 
 
   ],

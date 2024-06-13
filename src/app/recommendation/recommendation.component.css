@@ -5,12 +5,13 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
+
 }
 
 .popup {
   position: absolute;
   top: 50%;
-  height: 91%;
+  height: 100%;
   margin-top: 46px;
   width: 100%;
   left: 50%;
@@ -72,7 +73,7 @@
 .content-2{
   color:#001B3C;
   font-size: 12px;
-  font-weight: 200;
+  font-weight: 500;
   display: inline-block;
 }
 
@@ -150,7 +151,7 @@
 .scale{
   display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    column-gap: 57px;
+    column-gap: 54px;
 }
 
 .apply-btn{
@@ -164,6 +165,20 @@
 .line{
   padding-left: 7px;
   display: block;
+}
+
+.canvasjs-chart-canvas{
+margin-left: auto;
+margin-right: auto;
+}
+
+
+.donut{
+
+  *, *::before, *::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 

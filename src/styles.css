@@ -1,21 +1,23 @@
 @import '~bootstrap/dist/css/bootstrap';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
-body{
+
+
+body {
   overflow-x: hidden;
 }
 
-.popup-overlay{
-
+.popup-overlay {
   .bar-chart{
     .canvasjs-chart-canvas {
       border: none !important;
       top: -203px;
       }
 
-      /* .canvasjs-chart-toolbar{
-        margin-left: auto;
-        margin-right: auto;
-      } */
+      .canvasjs-chart-toolbar{
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
 
       *, *::before, *::after {
         box-sizing: border-box;
@@ -32,11 +34,101 @@ body{
 
 
 }
-.canvasjs-chart-credit{
+
+.canvasjs-chart-credit {
   display: none;
 }
 
-#canvasjs-angular-chart-container-1{
+#canvasjs-angular-chart-container-1 {
   margin-left: auto;
   margin-right: auto;
 }
+
+
+
+
+
+
+
+@media (max-width: 992px) {
+
+  .web-view-conatiner {
+    display: block;
+  }
+
+
+
+  .mobile-view {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .web-view-conatiner {
+    display: block;
+  }
+
+  .mobile-view {
+    display: none;
+  }
+}
+
+@media (min-width: 1400px) {
+  .web-view-conatiner {
+    display: block;
+  }
+
+  .mobile-view {
+    display: none;
+  }
+}
+
+
+
+@media (max-width: 767.98px) {
+  .web-view-conatiner {
+    display: none;
+  }
+
+  .mobile-view {
+    display: block;
+  }
+}
+
+
+html,
+body {
+  height: 100%;
+}
+
+
+.mat-mdc-tab:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline,
+.mat-mdc-tab-link:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline {
+  border-color: #00366B;
+  position: absolute;
+  top: 57px;
+
+}
+.mat-mdc-tab-labels{
+  border-bottom: 2px solid #D3D3D3;
+  padding-bottom: 10px;
+}
+
+.mdc-tab-indicator--active{
+  border: 1px solid #D9DCE1;
+    background-color: #D9DCE1;
+}
+
+.mdc-tab__text-label{
+
+  color: #00366B !important;
+     }
+
+     .mat-ripple{
+      border: 1px solid #D9DCE1;
+     }
+
+     .mat-mdc-tab-group.mat-mdc-tab-group-stretch-tabs>.mat-mdc-tab-header .mat-mdc-tab {
+      flex-grow: 1;
+      margin-right: 10px;
+  }
