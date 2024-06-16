@@ -21,7 +21,8 @@
      <div style="font-size: 10px;">Personal or Organization Number</div>
      <input type="text" style="width:34%;font-size: 17px;
      font-weight: 400;" formControlName="userName">
-     <div *ngIf="signInForm.get('userName')?.invalid">
+
+     <div *ngIf="signInForm.get('userName')?.invalid && signInForm.get('userName')?.touched">
       <div style="color: red;font-size: 8px;">Personal or Organization Number is required.</div>
     </div>
     </div>
@@ -31,16 +32,15 @@
       <div style="font-size: 10px;">Password</div>
       <input type="text"  style="width:34%;font-size: 17px;
       font-weight: 400;" formControlName="password">
-       <div *ngIf="signInForm.get('password')?.invalid">
+       <div *ngIf="signInForm.get('password')?.invalid && signInForm.get('password')?.touched">
         <div style="color: red;font-size: 8px;">Password is required.</div>
         </div>
    </div>
 
    <div class="col-12 mt-3">
-    <button style="width:34%;    background-color: #261AB1;
-    color: #ffffff;">Sign in</button>
+    <button class="signbtn" [disabled]="signInForm.get('password')?.invalid || signInForm.get('userName')?.invalid ">Sign in</button>
     <br>
-    <label class="mt-2" style="color: #261AB1;font-size: 12px;font-weight: 500;">Forgot Password</label>
+    <label class="mt-2" style="color: #261AB1;font-size: 12px;font-weight: 500;" >Forgot Password</label>
     <br>
     <label class="mt-3 mb-3" style="font-size: 12px;font-weight: 500;">Are you missing account? <span style="color: #261AB1;font-size: 12px;font-weight: 500;">Become a client</span></label>
 

@@ -2,3 +2,26 @@
     margin-left: 20px;
     margin-right: 20px;
 }
+
+button:disabled {
+  background-color: #D3D3D3;
+  border: 2px solid #D3D3D3;
+  color: #FFFFFF;
+  cursor: not-allowed;
+
+}
+
+.signbtn{
+  width:34%;
+  background-color: #261AB1;
+  color: #ffffff;border: unset;
+}
+
+button:disabled {
+  background-color: #D3D3D3;
+  border: 2px solid #D3D3D3;
+  color: #FFFFFF;
+  cursor: not-allowed;
+
+}
+

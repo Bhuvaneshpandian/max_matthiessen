@@ -9,16 +9,19 @@
       <label class="small-text">Welcome to your Max Matthiessen Mobile!</label>
     </div>
   </div>
-  <app-portfolio-recommendation (recommendationChange)="onRecommendationChange($event)"></app-portfolio-recommendation>
+  <app-portfolio-recommendation></app-portfolio-recommendation>
   <app-portfolio-summary></app-portfolio-summary>
   <app-overview></app-overview>
   <app-upcomming-payments></app-upcomming-payments>
   <app-news></app-news>
 </div>
-
-<div *ngIf="receivedRecommendation" class="app-recom">
-  <app-recommendation (recommendationChange)="onRecommendationChange($event)"></app-recommendation>
+<div *ngIf="showRecScreenInfo.recomSrc || showRecScreenInfo.pension || showRecScreenInfo.popup">
+  <app-recommendation [showRecScreenInfo]="showRecScreenInfo"></app-recommendation>
 </div>
+
+
+<app-mobile-down-menu></app-mobile-down-menu>
+
 
 
 

@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Output, AfterViewInit } from '@angular/core';
+import { Component, EventEmitter, Output, AfterViewInit, Input, OnInit } from '@angular/core';
+import { PensionSchemeScreen } from 'src/model/Pension.model';
+import { PensionReccomSchemeService } from 'src/services/pension-reccom-scheme.service';
 
 
 @Component({
@@ -6,59 +8,63 @@ import { Component, EventEmitter, Output, AfterViewInit } from '@angular/core';
   templateUrl: './recommendation.component.html',
   styleUrls: ['./recommendation.component.css']
 })
-export class RecommendationComponent  {
-  canIncreasePension: boolean = false;
+export class RecommendationComponent {
   chart: any;
-  succuss:boolean =false;
+  succuss: boolean = false;
 
-  @Output() recommendationChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  emitRecommendationChange() {
-    this.recommendationChange.emit(false);
+  @Input() showRecScreenInfo: PensionSchemeScreen | undefined;
+
+  constructor(private recScreenService: PensionReccomSchemeService) {
   }
-
-
 
   range: any = 7;
 
-
   chartOptions = {
-	  animationEnabled: false,
+    animationEnabled: false,
     backgroundColor: "rgba(0, 0, 0, 0)",
-    zoomEnabled:false,
-	  data: [{
+    zoomEnabled: false,
+    data: [{
 
-		type: "doughnut",
-		yValueFormatString: "#,###.##'%'",
-     colors : ['#ff6347', '#4682b4', '#32cd32'],
-		dataPoints: [
-		  { y: 28, name: "Pensions", color:"#D3D3D3" },
-		  { y: 20, name: "Insurances" , color:"#0099FF" },
-		  { y: 15, name: "License",  color:"#D3D3D3"},
-		  { y: 23, name: "Cash", color:"#D3D3D3" },
-		  { y: 12, name: "Real estate", color:"#D3D3D3" },
-      { y: 12, name: "Equity", color:"#D3D3D3" }
-		]
-	  }]
-	}
-
-  onclick() {
-    this.canIncreasePension = true;
+      type: "doughnut",
+      yValueFormatString: "#,###.##'%'",
+      colors: ['#ff6347', '#4682b4', '#32cd32'],
+      dataPoints: [
+        { y: 28, name: "Pensions", color: "#D3D3D3" },
+        { y: 20, name: "Insurances", color: "#0099FF" },
+        { y: 15, name: "License", color: "#D3D3D3" },
+        { y: 23, name: "Cash", color: "#D3D3D3" },
+        { y: 12, name: "Real estate", color: "#D3D3D3" },
+        { y: 12, name: "Equity", color: "#D3D3D3" }
+      ]
+    }]
   }
 
-
-  applyClick(){
-    this.canIncreasePension = false;
-
+  onBackClick() {
+    const screenInfo = this.showRecScreenInfo;
+    if (screenInfo?.recomSrc) {
+      this.recScreenService.setPopScreenInfo({ recomSrc: false, popup: false, pension: false })
+    }
+    if (screenInfo?.pension) {
+      this.recScreenService.setPopScreenInfo({ recomSrc: true, popup: false, pension: false })
+    }
   }
 
-
-  onBackClik() {
-    this.canIncreasePension = false;
-    this.emitRecommendationChange();
+  onSideClik() {
+    this.recScreenService.setPopScreenInfo({ recomSrc: false, popup: false, pension: false })
   }
 
-  onRangeChange(){
-    alert("hi")
+  onRangeChange() {
+  }
+  canDisable(): boolean {
+    if (this.range != 7) {
+      return false
+    }
+    return true
+  }
+
+  onCancelClick() {
+    this.recScreenService.setPopScreenInfo({ recomSrc: false, popup: false, pension: false })
+
   }
 }

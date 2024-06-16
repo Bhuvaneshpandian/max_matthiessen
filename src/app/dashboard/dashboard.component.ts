@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -9,12 +7,11 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent {
 
-  constructor(private router: Router){
+  constructor(private router: Router) {
 
   }
 
-  onRowClick(){
-
-  this.router.navigate(["/summary"])
+  onRowClick() {
+    this.router.navigate(["/summary"])
   }
 }

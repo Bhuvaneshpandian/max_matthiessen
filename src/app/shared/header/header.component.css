@@ -1,0 +1,20 @@
+
+.header {
+  background-color: #001B3C;
+  position: fixed;
+  top: 0;
+  left: 10px;
+  right: 10px;
+
+}
+
+.col {
+  margin: 14px;
+}
+.images-tag {
+  float: right;
+}
+
+.qus-img {
+  padding-right: 22px;
+}

@@ -61,6 +61,10 @@ body {
   .mobile-view {
     display: none;
   }
+
+  .menu-footer{
+    display: none;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -71,6 +75,9 @@ body {
   .mobile-view {
     display: none;
   }
+  .menu-footer{
+    display: none;
+  }
 }
 
 @media (min-width: 1400px) {
@@ -79,6 +86,9 @@ body {
   }
 
   .mobile-view {
+    display: none;
+  }
+  .menu-footer{
     display: none;
   }
 }
@@ -92,6 +102,9 @@ body {
 
   .mobile-view {
     display: block;
+  }
+  .menu-footer{
+    display: grid;
   }
 }
 
@@ -131,4 +144,22 @@ body {
      .mat-mdc-tab-group.mat-mdc-tab-group-stretch-tabs>.mat-mdc-tab-header .mat-mdc-tab {
       flex-grow: 1;
       margin-right: 10px;
+  }
+
+  .carousel-indicators {
+z-index: 0;
+  }
+
+  .mat-drawer-container {
+    background-color: unset;
+  }
+
+  .mat-drawer-content {
+    position: relative;
+    z-index: 1;
+    display: block;
+    height: 100%;
+    overflow: auto;
+    left: 19px;
+    background-color: #ffffff;
   }
