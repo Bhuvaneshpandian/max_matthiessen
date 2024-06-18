@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NativeBiometric, BiometryType } from '@capgo/capacitor-native-biometric';
 import { AuthService } from 'src/services/auth.service';
+import { Capacitor } from '@capacitor/core';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,7 +16,7 @@ export class LoginComponent {
   constructor(private router: Router, private authService: AuthService) {
     setTimeout(() => {
       this.canShowWelcomePage = false;
-    }, 2000)
+    }, 200)
   }
 
   onLoginClick(): void {
@@ -22,8 +24,29 @@ export class LoginComponent {
   }
 
   async onOpenClick() {
-    this.setCredentials()
+    if (Capacitor.isNativePlatform()) {
+      await this.setUpBioMatric();
+      return;
+    }
+    this.authService.login("bhuvanesh", '1234');
+    this.router.navigate(["/dashboard"])
+  }
 
+  async setCredentials() {
+    try {
+      NativeBiometric.setCredentials({
+        username: "bhuvanesh",
+        password: "1234",
+        server: "http://localhost:4200/login",
+      })
+    }
+    catch (e) {
+      alert(JSON.stringify(e))
+    }
+  }
+
+  async setUpBioMatric() {
+    this.setCredentials()
     try {
       const result = await NativeBiometric.isAvailable({ useFallback: true });
       if (!result.isAvailable) return;
@@ -38,29 +61,12 @@ export class LoginComponent {
       const credentials = await NativeBiometric.getCredentials({
         server: "http://localhost:4200/login",
       });
-      this.authService.login(credentials.username,credentials.password);
+      this.authService.login(credentials.username, credentials.password);
       this.router.navigate(["/dashboard"])
     }
     catch (e) {
       console.error(e);
     }
-
-  }
-  async setCredentials() {
-
-    try {
-      NativeBiometric.setCredentials({
-        username: "bhuvanesh",
-        password: "1234",
-        server: "http://localhost:4200/login",
-      })
-    }
-    catch (e) {
-      alert(JSON.stringify(e))
-    }
-
-
-
   }
 
 

@@ -2,16 +2,29 @@
   <div class="popup" id="popup">
     <div class="popup-content">
       <div class="row">
-        <div class="col-12 nav-image">
-          <img src="assets/Line.png"(click)="onSideClik()"/>
-          <div class="rec-label" *ngIf="showRecScreenInfo?.recomSrc">Recommendation</div></div>
-        <div class="rec-label" *ngIf="showRecScreenInfo?.pension">Increase Pension</div>
+        <div
+          class="col-4 my-auto"
+          *ngIf="!showRecScreenInfo?.popup"
+          (click)="onBackClick()"
+        >
+          <img src="assets/left-arrow.png" />
+        </div>
+        <div class="col-4 text-center" *ngIf="!showRecScreenInfo?.popup">
+          <img src="assets/Line.png" (click)="onSideClik()" />
+          <div class="rec-label" *ngIf="showRecScreenInfo?.recomSrc">
+            Recommendation
+          </div>
+        </div>
+        <div class="rec-label" *ngIf="showRecScreenInfo?.pension">
+          Increase Pension
+        </div>
       </div>
-      <div class="col-12" *ngIf="!showRecScreenInfo?.popup">
-        <img src="assets/left-arrow.png" height="30px" (click)="onBackClick()"/>
-      </div>
-      <div class="col-12" *ngIf="showRecScreenInfo?.popup" >
-        <img src="assets/pop-close.png" style="float: right" (click)="onCancelClick()" />
+      <div class="col-12" *ngIf="showRecScreenInfo?.popup">
+        <img
+          src="assets/pop-close.png"
+          style="float: right"
+          (click)="onCancelClick()"
+        />
       </div>
     </div>
     <div *ngIf="showRecScreenInfo?.recomSrc">

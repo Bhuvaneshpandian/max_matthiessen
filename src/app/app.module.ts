@@ -27,6 +27,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { RecommendationComponent } from './recommendation/recommendation.component';
 import { PensionReccommendationPopupComponent } from './recommendation/pension-reccommendation-popup/pension-reccommendation-popup.component';
 import { SuccessPopupComponent } from './recommendation/success-popup/success-popup.component';
+import { DashboardContentComponent } from './dashboard/dashboard-content/dashboard-content.component';
 
 
 
@@ -48,7 +49,8 @@ import { SuccessPopupComponent } from './recommendation/success-popup/success-po
     MobileDownMenuComponent,
     RecommendationComponent,
     PensionReccommendationPopupComponent,
-    SuccessPopupComponent
+    SuccessPopupComponent,
+    DashboardContentComponent
   ],
   imports: [
     BrowserModule,
