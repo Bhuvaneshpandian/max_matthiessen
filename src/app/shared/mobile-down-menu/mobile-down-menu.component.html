@@ -1,27 +1,27 @@
 <div class="bottom-nav-container menu-footer">
   <div routerLink="/dashboard">
-    <img src="../../assets/User.png">
+    <img [src]="getActive('dashboard') ? 'assets/active-home.png' : 'assets/unactive-home.png'">
     <br />
-    <label [ngClass]="getClass('dashboard') ? 'active' : 'inactive'">Dashboard</label>
+    <label [ngClass]="getActive('dashboard') ? 'active' : 'inactive'">Dashboard</label>
   </div>
   <div routerLink="/dashboard">
     <img src="../../assets/Save Search.png">
     <br />
-    <label [ngClass]="getClass('Watchlist') ? 'active' : 'inactive'">Watchlist</label>
+    <label [ngClass]="getActive('Watchlist') ? 'active' : 'inactive'">Watchlist</label>
   </div>
   <div routerLink="/summary">
     <img src="../../assets/Briefcase.png">
     <br />
-    <label [ngClass]="getClass('summary') ? 'active' : 'inactive'">Portfolio</label>
+    <label [ngClass]="getActive('summary') ? 'active' : 'inactive'">Portfolio</label>
   </div>
   <div>
     <img src="../../assets/User.png">
     <br />
-    <label [ngClass]="getClass('Manage') ? 'active' : 'inactive'">Manage</label>
+    <label [ngClass]="getActive('Manage') ? 'active' : 'inactive'">Manage</label>
   </div>
   <div>
     <img src="../../assets/Help.png">
     <br />
-    <label [ngClass]="getClass('Support') ? 'active' : 'inactive'">Support</label>
+    <label [ngClass]="getActive('Support') ? 'active' : 'inactive'">Support</label>
   </div>
 </div>

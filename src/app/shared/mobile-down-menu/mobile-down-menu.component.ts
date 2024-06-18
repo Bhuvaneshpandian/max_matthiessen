@@ -13,8 +13,8 @@ export class MobileDownMenuComponent {
     var newURL = window.location.pathname.split("/");
     this.activeUrl = newURL[1];
   }
-  getClass(value: string) {
 
+  getActive(value: string){
     if (value === this.activeUrl) {
       return true
     }
