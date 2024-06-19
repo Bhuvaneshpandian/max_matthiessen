@@ -1,7 +1,7 @@
 
 
 // @ts-ignore
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,6 +30,7 @@ import { CreateNewUserComponent } from './web-signin/create-new-user/create-new-
 import { HeaderComponent } from './shared/header/header.component';
 import { MobileDownMenuComponent } from './shared/mobile-down-menu/mobile-down-menu.component';
 import { HttpClientModule } from '@angular/common/http';
+import { GlobalErrorHandler } from 'src/services/error-handler.service';
 
 
 @NgModule({
@@ -67,7 +68,7 @@ import { HttpClientModule } from '@angular/common/http';
 
   ],
 
-  providers: [],
+  providers: [    { provide: ErrorHandler, useClass: GlobalErrorHandler }  ],
   bootstrap: [AppComponent]
 })
 

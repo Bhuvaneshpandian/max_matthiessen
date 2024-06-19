@@ -1,72 +1,55 @@
 {
   "users": [
     {
-      "userName": "bhuvanesh@email.com",
+      "id": "c5db",
+      "userName": "bhuvanesh",
       "password": "1234",
-      "id": "1",
-      "isBankId": false
-    },
-    {
-      "id": "f559",
-      "password": "1234",
-      "username": "bhuvanesh",
-      "isBankId": false
-    },
-    {
-      "id": "77a4",
-      "userName": "eqeq",
-      "password": "eqweq",
       "idType": "bankId"
     },
     {
-      "id": "bb9b",
-      "userName": "eqwe",
-      "password": "eqwe",
-      "idType": "userId"
+      "id": "a0fe",
+      "userName": "wwq",
+      "password": "swqd",
+      "idType": "bankId"
     },
     {
-      "id": "10d6",
-      "userName": "ewqe",
-      "password": "ewqewqe",
-      "idType": "userId"
+      "id": "a2a0",
+      "userName": "wqw",
+      "password": "wqwq",
+      "idType": "bankId"
     },
     {
-      "id": "d947",
-      "userName": "ewqe",
-      "password": "ewqewqe",
-      "idType": "userId"
-    },
-    {
-      "id": "ead1",
-      "userName": "ewqe",
-      "password": "ewqewqe",
-      "idType": "userId"
-    },
-    {
-      "id": "5ec6",
-      "userName": "ewqe",
-      "password": "ewqewqe",
-      "idType": "userId"
-    },
-    {
-      "id": "8d67",
-      "userName": "ewqe",
-      "password": "ewqewqe",
-      "idType": "userId"
+      "id": "9bdd",
+      "userName": "fwerfewrfw",
+      "password": "fwfwer",
+      "idType": "bankId"
     }
   ],
-  "post": [
+  "dashboardContent": [
     {
-      "email": "bhuvanesh@email.com",
-      "password": "1234",
-      "username": "bhuvanesh",
-      "id": "1"
+      "heading": "The Private Service",
+      "content": "Simplify and optimize your financial management with a comprehensive, user-friendly dashboard",
+      "id": "2a3a"
     },
     {
-      "id": "3243",
-      "email": "bhuvaneshpandian@email.com",
-      "password": "1234",
-      "username": "bhuvanesh"
+      "heading": "MSave",
+      "content": "Securely build and manage your savings effortlessly with our intuitive digital platform",
+      "id": "87fb"
+    },
+    {
+      "heading": "Max Funds",
+      "content": "Invest wisely with Max Funds, offering tailored fund options designed to maximize your returns",
+      "id": "5dff"
+    },
+    {
+      "heading": "Advice4Life",
+      "content": "Personalized, lifelong financial planning to secure your future, every step of the way",
+      "id": "8789"
+    },
+    {
+      "heading": "The Private Service",
+      "content": "Simplify and optimize your financial management with a comprehensive, user-friendly dashboard",
+      "id": "ba60"
     }
   ]
 }

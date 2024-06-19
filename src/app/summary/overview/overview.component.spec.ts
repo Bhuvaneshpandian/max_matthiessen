@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 import { OverviewComponent } from './overview.component';
 
 describe('OverviewComponent', () => {
@@ -8,7 +8,8 @@ describe('OverviewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OverviewComponent ]
+      declarations: [ OverviewComponent ],
+      imports:[CanvasJSAngularChartsModule]
     })
     .compileComponents();
 

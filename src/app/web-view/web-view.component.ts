@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/services/auth.service';
 
 
 @Component({
@@ -8,6 +10,21 @@ import { Component } from '@angular/core';
 })
 
 
-export class WebViewComponent {
+export class WebViewComponent implements OnInit{
+
+  constructor(private authService: AuthService,private router:Router){
+  }
+
+  ngOnInit(): void {
+  const user = this.authService.getUserInfo();
+  if (user?.userName) {
+    this.router.navigate(["/dashboard"])
+    return
+  }
+  this.router.navigate(["/login"])
+  }
+
+
+
 
 }

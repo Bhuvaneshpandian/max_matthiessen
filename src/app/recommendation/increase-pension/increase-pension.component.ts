@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PensionReccomSchemeService } from 'src/services/pension-reccom-scheme.service';
 
+
 @Component({
   selector: 'app-increase-pension',
   templateUrl: './increase-pension.component.html',

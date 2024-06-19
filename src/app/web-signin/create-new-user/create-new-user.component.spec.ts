@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CreateNewUserComponent } from './create-new-user.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormGroupDirective } from '@angular/forms';
 
 describe('CreateNewUserComponent', () => {
   let component: CreateNewUserComponent;
@@ -8,7 +10,8 @@ describe('CreateNewUserComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CreateNewUserComponent ]
+      declarations: [ CreateNewUserComponent,FormGroupDirective],
+      imports:[HttpClientModule]
     })
     .compileComponents();
 
@@ -18,10 +21,6 @@ describe('CreateNewUserComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-
-  it('should create user', () => {
     expect(component).toBeTruthy();
   });
 });

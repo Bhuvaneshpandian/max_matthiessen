@@ -17,15 +17,15 @@ export class LoginServiceService implements OnInit {
 
   }
   async login(payLoad: Login, users: Login[]) {
-    const user = this.getValidateUser(payLoad.userName, users)
+    const user = this.getValidateUser(payLoad, users)
     if (user.length) {
-      return this.http.post('http://localhost:3000/users', payLoad)
+      return "Login Successfully"
     }
-    throw Error('User not found!');
+    throw Error('User not found please check username and password');
   }
 
   async createNewUser(payLoad: Login, users: Login[]) {
-    const user = this.getValidateUser(payLoad.userName, users)
+    const user = this.getValidateUser(payLoad, users)
     if (!user.length) {
       return this.http.post('http://localhost:3000/users', payLoad).toPromise();
     }
@@ -33,9 +33,10 @@ export class LoginServiceService implements OnInit {
   }
 
 
-  getValidateUser(userName: string, users: Login[]) {
+  getValidateUser(payLoad: Login, users: Login[]) {
     const userInfo = users.filter((user) => {
-      return user.userName == userName
+      return payLoad.userName === user.userName && payLoad.password === user.password && payLoad.idType === user.idType
+
     })
     return userInfo
 

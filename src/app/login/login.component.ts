@@ -12,6 +12,7 @@ import { Capacitor } from '@capacitor/core';
 export class LoginComponent {
 
   canShowWelcomePage: boolean = true;
+  canShowLoginPage: boolean = false;
 
   constructor(private router: Router, private authService: AuthService) {
     setTimeout(() => {
@@ -19,17 +20,17 @@ export class LoginComponent {
     }, 200)
   }
 
-  onLoginClick(): void {
-    this.router.navigate(["/dashboard"])
-  }
-
-  async onOpenClick() {
-    if (Capacitor.isNativePlatform()) {
+  async onLoginClick() {
+     if (Capacitor.isNativePlatform()) {
       await this.setUpBioMatric();
       return;
     }
     this.authService.login("bhuvanesh", '1234',"BankId");
     this.router.navigate(["/dashboard"])
+  }
+
+  async onOpenClick() {
+  this.canShowLoginPage = true;
   }
 
   async setCredentials() {

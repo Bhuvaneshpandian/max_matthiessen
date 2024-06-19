@@ -1,6 +1,6 @@
 .login-conatiner{
   background-color: #001B3C;
-  height: 100vh;
+  height: 100%;
 }
 
 .heading{
@@ -47,6 +47,28 @@ font-size: 21px;
 .bg-white{
   background-color: #FFFFFF;
   color: #001B3C;
+}
+
+.mobile-login{
+  .label-name{
+    font-size: 18px;
+    color: #FFFFFF;
+    font-weight: 500;
+  }
+  .heading{
+    font-size: 18px;
+    color: #FFFFFF;
+    font-weight: 500;
+    padding-bottom:18px
+  }
+input{
+  width: 91%;
+}
+bottom{
+  width: 91%;
+    padding: 8px;
+    margin-top: 21px;
+}
 }
 
 

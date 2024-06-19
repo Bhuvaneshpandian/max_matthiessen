@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
+import { FormsModule } from '@angular/forms';
 import { IncreasePensionComponent } from './increase-pension.component';
 
 describe('IncreasePensionComponent', () => {
@@ -8,7 +9,9 @@ describe('IncreasePensionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IncreasePensionComponent ]
+      declarations: [ IncreasePensionComponent ],
+      imports:[CanvasJSAngularChartsModule,FormsModule]
+
     })
     .compileComponents();
 

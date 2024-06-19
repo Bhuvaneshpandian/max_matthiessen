@@ -12,3 +12,13 @@
 .head{
   margin-top: 10%;
 }
+
+@keyframes spinner-grow {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: none;
+  }
+}

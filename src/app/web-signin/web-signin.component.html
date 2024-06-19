@@ -9,26 +9,28 @@
     </div>
     <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
       <div class="col-12 mt-3">
-        <input
+        <div class="form-check">
+          <input class="form-check-input"
           id="bankId"
           type="radio"
           value="bankId"
           formControlName="idType"
         />
-        <label  class="ml-2 small-label" for="bankId"
-          >Bank Id</label
-        >
-        <span class="small-label">
+          <label class="form-check-label" for="flexCheckIndeterminate">
+            BankId
+          </label>
+
           <input
-            id="userId"
-            type="radio"
-            value="userId"
-            formControlName="idType"
-          />
-          <label  class="ml-2 small-label" for="userId"
-            >User Id</label
-          ></span
-        >
+          id="userId"
+          type="radio"
+          value="userId"
+          formControlName="idType"
+          class="user-input"
+        />
+          <label class="form-check-label userId" for="flexCheckIndeterminate">
+            UserId
+          </label>
+        </div>
       </div>
 
       <div class="col-12 mt-3">
@@ -113,6 +115,12 @@
     </div>
 
     <img src="assets//laptop.jpg" width="400px" Height="200px" />
+  </div>
+</div>
+
+<div *ngIf="canShowLoader" class="d-flex justify-content-center">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
   </div>
 </div>
 
