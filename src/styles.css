@@ -8,26 +8,28 @@ body {
 }
 
 .popup-overlay {
-  .bar-chart{
+  .bar-chart {
     .canvasjs-chart-canvas {
       border: none !important;
       top: -203px;
-      }
-
-      .canvasjs-chart-toolbar{
-        margin-left: auto !important;
-        margin-right: auto !important;
-      }
-
-      *, *::before, *::after {
-        box-sizing: border-box;
-        margin-left: auto !important;
-        margin-right: auto !important;
     }
 
-      .canvasjs-chart-credit{
-        display: none;
-      }
+    .canvasjs-chart-toolbar {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    .canvasjs-chart-credit {
+      display: none;
+    }
 
 
   }
@@ -46,10 +48,6 @@ body {
 
 
 
-
-
-
-
 @media (max-width: 992px) {
 
   .web-view-conatiner {
@@ -62,7 +60,7 @@ body {
     display: none;
   }
 
-  .menu-footer{
+  .menu-footer {
     display: none;
   }
 }
@@ -75,7 +73,8 @@ body {
   .mobile-view {
     display: none;
   }
-  .menu-footer{
+
+  .menu-footer {
     display: none;
   }
 }
@@ -88,7 +87,8 @@ body {
   .mobile-view {
     display: none;
   }
-  .menu-footer{
+
+  .menu-footer {
     display: none;
   }
 }
@@ -103,7 +103,8 @@ body {
   .mobile-view {
     display: block;
   }
-  .menu-footer{
+
+  .menu-footer {
     display: grid;
   }
 }
@@ -122,44 +123,45 @@ body {
   top: 57px;
 
 }
-.mat-mdc-tab-labels{
+
+.mat-mdc-tab-labels {
   border-bottom: 2px solid #D3D3D3;
   padding-bottom: 10px;
 }
 
-.mdc-tab-indicator--active{
+.mdc-tab-indicator--active {
   border: 1px solid #D9DCE1;
-    background-color: #D9DCE1;
+  background-color: #D9DCE1;
 }
 
-.mdc-tab__text-label{
+.mdc-tab__text-label {
 
   color: #00366B !important;
-     }
+}
 
-     .mat-ripple{
-      border: 1px solid #D9DCE1;
-     }
+.mat-ripple {
+  border: 1px solid #D9DCE1;
+}
 
-     .mat-mdc-tab-group.mat-mdc-tab-group-stretch-tabs>.mat-mdc-tab-header .mat-mdc-tab {
-      flex-grow: 1;
-      margin-right: 10px;
-  }
+.mat-mdc-tab-group.mat-mdc-tab-group-stretch-tabs>.mat-mdc-tab-header .mat-mdc-tab {
+  flex-grow: 1;
+  margin-right: 10px;
+}
 
-  .carousel-indicators {
-z-index: 0;
-  }
+.carousel-indicators {
+  z-index: 0;
+}
 
-  .mat-drawer-container {
-    background-color: unset;
-  }
+.mat-drawer-container {
+  background-color: unset;
+}
 
-  .mat-drawer-content {
-    position: relative;
-    z-index: 1;
-    display: block;
-    height: 100%;
-    overflow: auto;
-    left: 19px;
-    background-color: #ffffff;
-  }
+.mat-drawer-content {
+  position: relative;
+  z-index: 1;
+  display: block;
+  height: 100%;
+  overflow: auto;
+  left: 19px;
+  background-color: #ffffff;
+}

@@ -1,60 +1,109 @@
-<div class="row signin-conatiner">
-  <div class="col-7">
+<div  class="row signin-conatiner">
+  <div *ngIf="!canShowNewUser" class="col-7">
     <div class="col-12 mt-4">
-      <label style=" font-size: 17px;
-      font-weight: 500;">Sign in</label>
+      <label class="sign-label">Sign in</label>
       <br />
-      <label style="font-size: 10px;">Log in to manage your fund savings</label>
+      <label class="small-label" >Log in to manage your fund savings</label>
+      <br />
+      <label class="error small-label">{{ loginError }}</label>
     </div>
     <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+      <div class="col-12 mt-3">
+        <input
+          id="bankId"
+          type="radio"
+          value="bankId"
+          formControlName="idType"
+        />
+        <label  class="ml-2 small-label" for="bankId"
+          >Bank Id</label
+        >
+        <span class="small-label">
+          <input
+            id="userId"
+            type="radio"
+            value="userId"
+            formControlName="idType"
+          />
+          <label  class="ml-2 small-label" for="userId"
+            >User Id</label
+          ></span
+        >
+      </div>
 
-    <div class="col-12 mt-3">
-      <input id="bankId" type="radio" value="bankId" formControlName="authenticationType">
-      <label style="padding-left:10px" class="ml-2" for="bankId">Bank Id</label>
-      <span style="padding-left:10px">
-        <input id="userId" type="radio"  value="userId" formControlName="authenticationType">
-        <label style="padding-left:10px" class="ml-2" for="userId">User Id</label></span>
-    </div>
+      <div class="col-12 mt-3">
+        <div class="small-label">Personal or Organization Number</div>
+        <input
+          type="text"
+          class="input-style"
+          formControlName="userName"
+        />
 
-
-    <div class="col-12 mt-3">
-     <div style="font-size: 10px;">Personal or Organization Number</div>
-     <input type="text" style="width:34%;font-size: 17px;
-     font-weight: 400;" formControlName="userName">
-
-     <div *ngIf="signInForm.get('userName')?.invalid && signInForm.get('userName')?.touched">
-      <div style="color: red;font-size: 8px;">Personal or Organization Number is required.</div>
-    </div>
-    </div>
-
-
-    <div class="col-12 mt-3">
-      <div style="font-size: 10px;">Password</div>
-      <input type="text"  style="width:34%;font-size: 17px;
-      font-weight: 400;" formControlName="password">
-       <div *ngIf="signInForm.get('password')?.invalid && signInForm.get('password')?.touched">
-        <div style="color: red;font-size: 8px;">Password is required.</div>
+        <div
+          *ngIf="
+            signInForm.get('userName')?.invalid &&
+            signInForm.get('userName')?.touched
+          "
+        >
+          <div class="error">
+            Personal or Organization Number is required.
+          </div>
         </div>
-   </div>
+      </div>
 
-   <div class="col-12 mt-3">
-    <button class="signbtn" [disabled]="signInForm.get('password')?.invalid || signInForm.get('userName')?.invalid ">Sign in</button>
-    <br>
-    <label class="mt-2" style="color: #261AB1;font-size: 12px;font-weight: 500;" >Forgot Password</label>
-    <br>
-    <label class="mt-3 mb-3" style="font-size: 12px;font-weight: 500;">Are you missing account? <span style="color: #261AB1;font-size: 12px;font-weight: 500;">Become a client</span></label>
+      <div class="col-12 mt-3">
+        <div class="small-label">Password</div>
+        <input
+          type="text"
+          class="input-style"
+          formControlName="password"
+        />
+        <div
+          *ngIf="
+            signInForm.get('password')?.invalid &&
+            signInForm.get('password')?.touched
+          "
+        >
+          <div class="error">Password is required.</div>
+        </div>
+      </div>
 
- </div>
-
- </form>
-
-
+      <div class="col-12 mt-3">
+        <button
+          class="signbtn"
+          [disabled]="
+            signInForm.get('password')?.invalid ||
+            signInForm.get('userName')?.invalid
+          "
+        >
+          Sign in
+        </button>
+        <br />
+        <label
+          class="mt-2 missing-label blue-color"
+          >Forgot Password</label
+        >
+        <br />
+        <label class="mt-3 mb-3 missing-label"
+          >Are you missing account?
+          <button class="become-btn" (click)="onBecomeClick()">
+            Become a client
+          </button></label
+        >
+      </div>
+    </form>
   </div>
 
-
-
-
-
+  <div *ngIf="canShowNewUser" class="col-7">
+    <div class="col-12 mt-4">
+      <label class="signup-label">Sign Up</label>
+      <br />
+      <label class="small-label">Sign Up to manage your fund savings</label>
+      <br />
+      <label class="error small-label">{{ loginError }}</label>
+    </div>
+      <app-create-new-user></app-create-new-user>
+  </div>
 
   <div class="col-5 text-center mt-5">
     <div>
@@ -66,3 +115,7 @@
     <img src="assets//laptop.jpg" width="400px" Height="200px" />
   </div>
 </div>
+
+
+
+

@@ -22,19 +22,19 @@ import { WebSigninComponent } from './web-signin/web-signin.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import { MobileDownMenuComponent } from './shared/mobile-down-menu/mobile-down-menu.component';
-import { HeaderComponent } from './shared/header/header.component';
 import { RecommendationComponent } from './recommendation/recommendation.component';
 import { PensionReccommendationPopupComponent } from './recommendation/pension-reccommendation-popup/pension-reccommendation-popup.component';
 import { SuccessPopupComponent } from './recommendation/success-popup/success-popup.component';
 import { DashboardContentComponent } from './dashboard/dashboard-content/dashboard-content.component';
-
+import { CreateNewUserComponent } from './web-signin/create-new-user/create-new-user.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { MobileDownMenuComponent } from './shared/mobile-down-menu/mobile-down-menu.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     DashboardComponent,
     SummaryComponent,
     OverviewComponent,
@@ -46,11 +46,13 @@ import { DashboardContentComponent } from './dashboard/dashboard-content/dashboa
     LoginComponent,
     WebViewComponent,
     WebSigninComponent,
-    MobileDownMenuComponent,
     RecommendationComponent,
     PensionReccommendationPopupComponent,
     SuccessPopupComponent,
-    DashboardContentComponent
+    DashboardContentComponent,
+    CreateNewUserComponent,
+    HeaderComponent,
+    MobileDownMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -60,8 +62,8 @@ import { DashboardContentComponent } from './dashboard/dashboard-content/dashboa
     MatTabsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatSidenavModule
-
+    MatSidenavModule,
+    HttpClientModule
 
   ],
 

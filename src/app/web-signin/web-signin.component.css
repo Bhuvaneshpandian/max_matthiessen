@@ -25,3 +25,42 @@ button:disabled {
 
 }
 
+.error{
+  color: red;
+  font-size: 8px
+}
+
+.become-btn{
+  background-color: unset;
+  border: unset;
+  color:#261AB1 ;
+}
+
+.small-label{
+  font-size: 10px;
+}
+
+.input-style{
+  width: 34%;
+  font-size: 17px;
+   font-weight: 400
+}
+
+.sigin-label{
+  font-size: 17px;
+  font-weight: 500
+}
+
+.signup-label{
+  font-size: 17px;
+  font-weight: 500
+}
+
+.missing-label{
+  font-size: 12px;
+   font-weight: 500
+}
+
+.blue-color{
+  color: #261ab1
+}

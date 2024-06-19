@@ -8,16 +8,15 @@ export class AuthService {
 
   constructor() {}
 
-  login(userName:string,password:string):void{
-    localStorage.setItem('user', JSON.stringify({userName,password}));
+  login(userName:string,password:string,idType:string):void{
+    localStorage.setItem('user', JSON.stringify({userName,password,idType}));
   }
 
-  getUserInfo():User{
+  getUserInfo():any{
     const userInfo:string|null = localStorage.getItem('user');
     if(userInfo){
       return JSON.parse(userInfo)
     }
-    return{}
   }
 
   clearLocalStorage(){

@@ -1,0 +1,72 @@
+{
+  "users": [
+    {
+      "userName": "bhuvanesh@email.com",
+      "password": "1234",
+      "id": "1",
+      "isBankId": false
+    },
+    {
+      "id": "f559",
+      "password": "1234",
+      "username": "bhuvanesh",
+      "isBankId": false
+    },
+    {
+      "id": "77a4",
+      "userName": "eqeq",
+      "password": "eqweq",
+      "idType": "bankId"
+    },
+    {
+      "id": "bb9b",
+      "userName": "eqwe",
+      "password": "eqwe",
+      "idType": "userId"
+    },
+    {
+      "id": "10d6",
+      "userName": "ewqe",
+      "password": "ewqewqe",
+      "idType": "userId"
+    },
+    {
+      "id": "d947",
+      "userName": "ewqe",
+      "password": "ewqewqe",
+      "idType": "userId"
+    },
+    {
+      "id": "ead1",
+      "userName": "ewqe",
+      "password": "ewqewqe",
+      "idType": "userId"
+    },
+    {
+      "id": "5ec6",
+      "userName": "ewqe",
+      "password": "ewqewqe",
+      "idType": "userId"
+    },
+    {
+      "id": "8d67",
+      "userName": "ewqe",
+      "password": "ewqewqe",
+      "idType": "userId"
+    }
+  ],
+  "post": [
+    {
+      "email": "bhuvanesh@email.com",
+      "password": "1234",
+      "username": "bhuvanesh",
+      "id": "1"
+    },
+    {
+      "id": "3243",
+      "email": "bhuvaneshpandian@email.com",
+      "password": "1234",
+      "username": "bhuvanesh"
+    }
+  ]
+}

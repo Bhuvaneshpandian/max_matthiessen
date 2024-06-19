@@ -1,0 +1,55 @@
+.signin-conatiner{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+button:disabled {
+background-color: #D3D3D3;
+border: 2px solid #D3D3D3;
+color: #FFFFFF;
+cursor: not-allowed;
+
+}
+
+.signbtn{
+width:34%;
+background-color: #261AB1;
+color: #ffffff;border: unset;
+}
+
+button:disabled {
+background-color: #D3D3D3;
+border: 2px solid #D3D3D3;
+color: #FFFFFF;
+cursor: not-allowed;
+
+}
+
+.error{
+color: red;
+}
+
+.become-btn{
+background-color: unset;
+border: unset;
+color:#261AB1 ;
+}
+
+.label-name{
+  padding-left: 10px;
+}
+
+.heading{
+  font-size: 10px;
+}
+
+.input-style{
+  width: 34%;
+  font-size: 17px;
+  font-weight: 400
+}
+
+.error-class{
+  color: red;
+  font-size: 8px
+}

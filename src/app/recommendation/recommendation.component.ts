@@ -25,7 +25,6 @@ export class RecommendationComponent {
     backgroundColor: "rgba(0, 0, 0, 0)",
     zoomEnabled: false,
     data: [{
-
       type: "doughnut",
       yValueFormatString: "#,###.##'%'",
       colors: ['#ff6347', '#4682b4', '#32cd32'],

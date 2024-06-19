@@ -1,11 +1,58 @@
-.prof{
+.prof {
   background: linear-gradient(to bottom, #001B3C, #1F71C1);
   margin-left: auto;
   margin-right: auto;
   border-radius: 5px;
 }
 
-.portfolio-summary{
+.portfolio-summary {
   color: #ffffff;
   font-size: 16px;
+}
+
+.talk-btn {
+  border: 1px solid #91c60f;
+  color: #91c60f;
+  background-color: unset;
+  font-size: 14px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-radius: 5px;
+}
+
+.view-option-btn{
+  background-color: #91c60f;
+        color: #ffffff;
+        margin-right: 10px;
+        font-size: 14px;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        border: none;
+        border-radius: 5px;
+}
+
+.parga{
+  color: #ffffff;font-weight: 500; font-size: 10px
+}
+
+.head{
+  color: #ffffff;font-weight: 500;
+}
+
+.head-container{
+  margin-top: auto; margin-bottom: auto; padding-top: 16px
+}
+
+.profile-img{
+  margin-top: auto; margin-bottom: auto
+}
+
+.profile-summary-header{
+  margin-top: 19px
+}
+
+.cancel-img{
+  float: right
 }

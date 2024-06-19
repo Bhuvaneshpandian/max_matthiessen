@@ -82,6 +82,8 @@
 
 .contnt {
   background-color: #f7f7f7;
+  margin-top: 114px;
+  padding-top: 157px
 }
 
 .pension-conatiner {
@@ -176,4 +178,33 @@ button:disabled {
   border: 2px solid #d3d3d3;
   color: #ffffff;
   cursor: not-allowed;
+}
+
+.month-label{
+  font-size: 10px
+}
+
+.doller{
+  font-size: 16px;
+  color: #232323;
+  font-weight: 600
+}
+
+.pension-label{
+  color: #232323;
+  font-size: 19px
+}
+
+.pension-continer{
+  position: relative;
+  bottom: 149px
+}
+
+.chart-cont{
+  position: absolute;
+  top: 65px
+}
+
+.slider{
+  width: 100%
 }

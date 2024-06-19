@@ -1,0 +1,74 @@
+
+<form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+  <div class="col-12 mt-3">
+    <input
+      id="bankId"
+      type="radio"
+      value="bankId"
+      formControlName="idType"
+    />
+    <label class="ml-2 label-name" for="bankId"
+      >Bank Id</label
+    >
+    <span class="label-name">
+      <input
+        id="userId"
+        type="radio"
+        value="userId"
+        formControlName="idType"
+      />
+      <label  class="ml-2 label-name" for="userId"
+        >User Id</label
+      ></span
+    >
+  </div>
+
+  <div class="col-12 mt-3">
+    <div class="heading">Personal or Organization Number</div>
+    <input
+      type="text"
+      class="input-style"
+      formControlName="userName"
+    />
+
+    <div
+      *ngIf="
+        signInForm.get('userName')?.invalid &&
+        signInForm.get('userName')?.touched
+      "
+    >
+      <div class="error-class">
+        Personal or Organization Number is required.
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 mt-3">
+    <div class="heading">Password</div>
+    <input
+      type="text"
+      class="input-style"
+      formControlName="password"
+    />
+    <div
+      *ngIf="
+        signInForm.get('password')?.invalid &&
+        signInForm.get('password')?.touched
+      "
+    >
+      <div class="error-class">Password is required.</div>
+    </div>
+  </div>
+
+  <div class="col-12 mt-3">
+    <button
+      class="signbtn"
+      [disabled]="
+        signInForm.get('password')?.invalid ||
+        signInForm.get('userName')?.invalid
+      "
+    >
+      Sign Up
+    </button>
+  </div>
+</form>

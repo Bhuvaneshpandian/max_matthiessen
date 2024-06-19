@@ -1,18 +1,18 @@
-<div class="row contnt donut" style="margin-top: 114px; padding-top: 157px">
-  <div style="position: absolute; top: 65px">
+<div class="row contnt donut">
+  <div class="chart-cont">
     <canvasjs-chart
       [options]="chartOptions"
       [styles]="{ width: '70%', height: '250px' }"
     ></canvasjs-chart>
-    <div style="position: relative; bottom: 149px">
-      <div class="text-center" style="color: #232323; font-size: 19px">
+    <div class="pension-continer">
+      <div class="text-center pension-label">
         Pension
       </div>
       <div class="text-center">
-        <label style="font-size: 16px; color: #232323; font-weight: 600">
+        <label class="doller">
           $280</label
         >
-        <span class="pl-2" style="font-size: 10px">/month</span>
+        <span class="pl-2 month-label">/month</span>
       </div>
     </div>
   </div>
@@ -47,7 +47,6 @@
   </div>
   <div class="col-12 pt-4 mb-4">
     <input
-      style="width: 100%"
       type="range"
       min="0"
       max="25"

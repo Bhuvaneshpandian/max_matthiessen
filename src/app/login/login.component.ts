@@ -28,7 +28,7 @@ export class LoginComponent {
       await this.setUpBioMatric();
       return;
     }
-    this.authService.login("bhuvanesh", '1234');
+    this.authService.login("bhuvanesh", '1234',"BankId");
     this.router.navigate(["/dashboard"])
   }
 
@@ -61,7 +61,7 @@ export class LoginComponent {
       const credentials = await NativeBiometric.getCredentials({
         server: "http://localhost:4200/login",
       });
-      this.authService.login(credentials.username, credentials.password);
+      this.authService.login(credentials.username, credentials.password,"bankId");
       this.router.navigate(["/dashboard"])
     }
     catch (e) {
