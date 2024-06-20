@@ -44,6 +44,7 @@ export class CreateNewUserComponent {
       }
     }
     catch (error: any) {
+      alert(JSON.stringify(error))
     }
   }
 

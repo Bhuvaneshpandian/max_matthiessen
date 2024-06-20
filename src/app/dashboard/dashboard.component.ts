@@ -11,6 +11,8 @@ export class DashboardComponent {
 
   }
 
+
+  
   onRowClick() {
     this.router.navigate(["/summary"])
   }

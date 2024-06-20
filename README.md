@@ -32,6 +32,10 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 `npx cap open android`
 
+Run JSON server
+
+`npx json-server --host 172.20.32.179 db.json`
+
 
 
 

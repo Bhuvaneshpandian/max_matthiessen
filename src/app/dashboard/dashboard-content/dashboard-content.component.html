@@ -1,4 +1,4 @@
-<div class="dashboard-conatiner">
+<div  class="dashboard-conatiner">
   <div class="row header-content">
     <div class="col">
       <label class="header-text">Welcome to Max Matthiessen</label>
@@ -7,16 +7,13 @@
     </div>
   </div>
 
-  <div class="row content">
+  <div class="row content" *ngFor="let content of dashboardContent">
     <div class="col">
       <div class="row">
         <div class="col-10 col-lg-11" (click)="onContentClick()">
-          <label class="content-1 pt-2">The Private Service</label>
+          <label class="content-1 pt-2">{{content?.heading}}</label>
           <br />
-          <label class="content-2 pt-2 pb-2"
-            >Simplify and optimize your financial management with a
-            comprehensive, user-friendly dashboard</label
-          >
+          <label class="content-2 pt-2 pb-2">{{content?.content}}</label>
         </div>
         <div class="col-2 col-lg-1 arrow" (click)="onContentClick()">
           <img src="assets/Vector.png" />
@@ -25,7 +22,14 @@
     </div>
   </div>
 
-  <div class="row content">
+
+  <div *ngIf="canShowLoader" class="text-center">
+    <div class="spinner-border" role="status">
+    </div>
+  </div>
+
+
+  <!-- <div class="row content">
     <div class="col">
       <div class="row">
         <div class="col-10 col-lg-11">
@@ -131,5 +135,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>
+
+
+
+

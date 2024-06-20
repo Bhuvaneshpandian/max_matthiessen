@@ -16,7 +16,7 @@ import { PortfolioRecommendationComponent } from './summary/portfolio-recommenda
 import { IncreasePensionComponent } from './recommendation/increase-pension/increase-pension.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
-import { WebViewComponent } from './web-view/web-view.component';
+import { WebViewComponent } from './login/web-view/web-view.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { WebSigninComponent } from './web-signin/web-signin.component';
 import { ReactiveFormsModule } from '@angular/forms';

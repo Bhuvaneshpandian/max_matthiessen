@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoginComponent } from './login.component';
-import { WebViewComponent } from '../web-view/web-view.component';
+import { WebViewComponent } from './web-view/web-view.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { WebSigninComponent } from '../web-signin/web-signin.component';
 import { HttpClientModule } from '@angular/common/http';

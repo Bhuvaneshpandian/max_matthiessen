@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { WebSigninComponent } from './web-signin.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
@@ -10,50 +10,58 @@ import { of } from 'rxjs';
 describe('WebSigninComponent', () => {
   let component: WebSigninComponent;
   let fixture: ComponentFixture<WebSigninComponent>;
-  let authService: jasmine.SpyObj<AuthService>;
-  let loginService: jasmine.SpyObj<LoginServiceService>;
-  let router: Router;
-  let navigateSpy: jasmine.Spy;
+  let mockLoginService: jasmine.SpyObj<LoginServiceService>;
+  let mockAuthService: jasmine.SpyObj<AuthService>;
+  let mockRouter: Router;
 
   beforeEach(async () => {
-    const authServiceSpy = jasmine.createSpyObj('AuthService', ['login']);
-    const loginServiceSpy = jasmine.createSpyObj('LoginService', ['login']);
     await TestBed.configureTestingModule({
       imports:[RouterTestingModule,HttpClientTestingModule],
       declarations: [ WebSigninComponent,FormGroupDirective ],
-      providers: [
-        FormBuilder,
-        { provide: AuthService, useValue: authServiceSpy },
-        { provide: LoginServiceService, useValue: loginServiceSpy },
-        { provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } }
-      ]
+      providers: [FormBuilder,AuthService,LoginServiceService,Router]
     })
     .compileComponents();
-
     fixture = TestBed.createComponent(WebSigninComponent);
     component = fixture.componentInstance;
-    authService = TestBed.inject(AuthService) as jasmine.SpyObj<AuthService>;
-    loginService = TestBed.inject(LoginServiceService) as jasmine.SpyObj<LoginService>;
-    router = TestBed.inject(Router);
-    navigateSpy = router.navigate as jasmine.Spy;
+    mockLoginService = TestBed.inject(LoginServiceService) as jasmine.SpyObj<LoginServiceService>;
+    mockAuthService = TestBed.inject(AuthService) as jasmine.SpyObj<AuthService>;
+    mockRouter = TestBed.inject(Router) as Router;
     fixture.detectChanges();
+    spyOn(mockLoginService, 'login').and.returnValue(of({ success: true }));
+spyOn(mockAuthService, 'login').and.returnValue(Promise.resolve());
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should navigate to dashboard on successful login',(() => {
-    component.signInForm.patchValue({
+  it('should set canShowLoader to true, call services, and navigate to dashboard on successful submit', fakeAsync(() => {
+    // Arrange
+    component.signInForm.setValue({
+      idType: 'someIdType',
+      userName: 'testUser',
+      password: 'testPassword'
+    });
+    component.onSubmit();
+    tick();
+    expect(mockLoginService.login).toHaveBeenCalledOnceWith(
+      {
       userName: 'testUser',
       password: 'testPassword',
-      idType: 'defaultIdType'
-    });
-
-    component.onSubmit();
-    tick()
-    fixture.detectChanges();
-    expect(navigateSpy).toHaveBeenCalledWith(['/dashboard']);
+      idType: 'someIdType'
+    },
+    {userName: 'testUser',
+    password: 'testPassword',
+    idType: 'someIdType'}
+  );
+    expect(mockAuthService.login).toHaveBeenCalledOnceWith('testUser', 'testPassword', 'someIdType');
+    expect(mockRouter.navigate).toHaveBeenCalledWith(['/dashboard']);
+    expect(component.canShowLoader).toBeFalse();
+    expect(component.loginError).toBeUndefined();
   }));
 
+
 });
+
+
+

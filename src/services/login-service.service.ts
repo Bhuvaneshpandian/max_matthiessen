@@ -1,7 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { Login } from 'src/model/Login.model';
 import { HttpClient } from '@angular/common/http';
-
+import { environment } from 'src/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +27,7 @@ export class LoginServiceService implements OnInit {
   async createNewUser(payLoad: Login, users: Login[]) {
     const user = this.getValidateUser(payLoad, users)
     if (!user.length) {
-      return this.http.post('http://localhost:3000/users', payLoad).toPromise();
+      return this.http.post(`${environment.url}/users`, payLoad).toPromise();
     }
     throw Error('UserName already exsits!');
   }
@@ -43,7 +43,7 @@ export class LoginServiceService implements OnInit {
   }
 
   fetchUsers() {
-    const value = this.http.get<Login[]>('http://localhost:3000/users');
+    const value = this.http.get<Login[]>(`${environment.url}/users`);
     return value
   }
 
