@@ -10,7 +10,7 @@ import { DashboardService } from 'src/services/dashboard.service';
 })
 export class DashboardContentComponent implements OnInit {
   @Output() onRowClick = new EventEmitter<void>();
-  canShowLoader:boolean = false
+  canShowLoader: boolean = false
 
   dashboardContent: any[] = [];
   constructor(private dashboardService: DashboardService) { }
@@ -22,17 +22,16 @@ export class DashboardContentComponent implements OnInit {
 
   fetchDashboardContent() {
     this.canShowLoader = true;
-    this.dashboardService.fetchDashboard().pipe(
-      finalize(() => {
-        this.canShowLoader = false;
-      })
-    ).subscribe({
+    this.dashboardService.fetchDashboard().subscribe({
       next: (content) => {
         this.dashboardContent = content;
       },
       error: (error) => {
         console.error('Error fetching dashboard content:', error);
         this.dashboardContent = [];
+      },
+      complete: () => {
+        this.canShowLoader = false;
       }
     });
   }

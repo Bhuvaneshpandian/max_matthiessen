@@ -10,7 +10,7 @@ import { Dashboard } from 'src/model/Dashboard.model';
 export class DashboardService {
   constructor(private http: HttpClient) { }
 
-  fetchDashboard() {
+  fetchDashboard():Observable<Dashboard[]> {
     return  this.http.get<Dashboard[]>(
       `${environment.url}/dashboardContent`
     );
