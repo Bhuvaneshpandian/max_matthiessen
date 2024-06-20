@@ -42,7 +42,6 @@ export class LoginComponent {
       })
     }
     catch (e) {
-      alert(JSON.stringify(e))
     }
   }
 
