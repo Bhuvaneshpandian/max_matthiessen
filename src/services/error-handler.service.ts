@@ -6,6 +6,6 @@ export class GlobalErrorHandler implements ErrorHandler {
   constructor() { }
 
   handleError(error: any): void {
-    console.log('Global error handler:', error);
+    alert(JSON.stringify('Global error handler:', error.message))
   }
 }

@@ -165,3 +165,7 @@ body {
   left: 19px;
   background-color: #ffffff;
 }
+
+.carousel-indicators{
+  display: none;
+}

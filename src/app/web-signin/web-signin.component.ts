@@ -58,7 +58,7 @@ export class WebSigninComponent implements OnInit {
       if (this.signInForm.valid) {
         const payload: User = { idType: this.signInForm.value.idType, userName: this.signInForm.value.userName, password: this.signInForm.value.password };
         if (payload.userName && payload.password) {
-          await this.loginService.login({ userName: payload.userName, password: payload.password, idType: payload.idType }, this.users)
+      await this.loginService.login({ userName: payload.userName, password: payload.password, idType: payload.idType }, this.users)
           await this.authService.login(payload?.userName, payload.password, payload.idType);
         }
         this.router.navigate(["/dashboard"])

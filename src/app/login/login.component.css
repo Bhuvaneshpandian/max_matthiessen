@@ -1,6 +1,7 @@
 .login-conatiner{
   background-color: #001B3C;
   height: 100%;
+  overflow: hidden;
 }
 
 .heading{
@@ -35,8 +36,9 @@
 
 .footer-conatiner{
   position: absolute;
-  bottom: 58px;
   left: 30px;
+  bottom: 17px;
+
 }
 
 .try-demo{

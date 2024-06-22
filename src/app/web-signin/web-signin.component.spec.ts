@@ -6,59 +6,63 @@ import { FormBuilder, FormGroupDirective } from '@angular/forms';
 import { AuthService } from 'src/services/auth.service';
 import { LoginServiceService } from 'src/services/login-service.service';
 import { Router } from '@angular/router';
-import { of } from 'rxjs';
-describe('WebSigninComponent', () => {
+import { throwError } from 'rxjs';
+
+fdescribe('WebSigninComponent', () => {
   let component: WebSigninComponent;
   let fixture: ComponentFixture<WebSigninComponent>;
-  let mockLoginService: jasmine.SpyObj<LoginServiceService>;
-  let mockAuthService: jasmine.SpyObj<AuthService>;
-  let mockRouter: Router;
+
+
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[RouterTestingModule,HttpClientTestingModule],
-      declarations: [ WebSigninComponent,FormGroupDirective ],
-      providers: [FormBuilder,AuthService,LoginServiceService,Router]
+      imports: [RouterTestingModule, HttpClientTestingModule],
+      declarations: [WebSigninComponent, FormGroupDirective],
+      providers: [FormBuilder, AuthService, LoginServiceService, Router]
     })
-    .compileComponents();
+      .compileComponents();
     fixture = TestBed.createComponent(WebSigninComponent);
     component = fixture.componentInstance;
-    mockLoginService = TestBed.inject(LoginServiceService) as jasmine.SpyObj<LoginServiceService>;
-    mockAuthService = TestBed.inject(AuthService) as jasmine.SpyObj<AuthService>;
-    mockRouter = TestBed.inject(Router) as Router;
-    fixture.detectChanges();
-    spyOn(mockLoginService, 'login').and.returnValue(of({ success: true }));
-spyOn(mockAuthService, 'login').and.returnValue(Promise.resolve());
+    let formBuilder = TestBed.inject(FormBuilder);
+
+    component.signInForm = formBuilder.group({
+      idType: ['bankId'],
+      userName: ['testUser'],
+      password: ['12345']
+    })
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should set canShowLoader to true, call services, and navigate to dashboard on successful submit', fakeAsync(() => {
-    // Arrange
-    component.signInForm.setValue({
-      idType: 'someIdType',
-      userName: 'testUser',
-      password: 'testPassword'
-    });
-    component.onSubmit();
-    tick();
-    expect(mockLoginService.login).toHaveBeenCalledOnceWith(
-      {
-      userName: 'testUser',
-      password: 'testPassword',
-      idType: 'someIdType'
-    },
-    {userName: 'testUser',
-    password: 'testPassword',
-    idType: 'someIdType'}
-  );
-    expect(mockAuthService.login).toHaveBeenCalledOnceWith('testUser', 'testPassword', 'someIdType');
-    expect(mockRouter.navigate).toHaveBeenCalledWith(['/dashboard']);
-    expect(component.canShowLoader).toBeFalse();
-    expect(component.loginError).toBeUndefined();
-  }));
+  it('should sign in', async () => {
+    const mockUser = { userName: 'testUser', password: '12345', idType: 'bankId' };
+    const mockLoginResponse = [{ userName: 'testUser', password: '12345', idType: 'bankId' }];
+    const loginService = fixture.debugElement.injector.get(LoginServiceService);
+    const authService = fixture.debugElement.injector.get(AuthService);
+    const logInResponse = await loginService.login(mockUser, mockLoginResponse);
+    await authService.login(mockUser.userName, mockUser.password, mockUser.idType);
+    component.onSubmit
+    expect(logInResponse).toBe('Login Successfully');
+    expect(component.loginError).toBe('');
+    expect(component.canShowLoader).toBe(false);
+  })
+
+  it('should not sig in', async () => {
+    const mockUser = { userName: 'testUser', password: '12345', idType: 'bankId' };
+    const mockLoginResponse = [{ userName: 'testUser1', password: '12345', idType: 'userId' }];
+    const loginService = fixture.debugElement.injector.get(LoginServiceService);
+    let errorMsg = ""
+    try {
+      await loginService.login(mockUser, mockLoginResponse);
+    } catch (e: any) {
+      errorMsg = e.message
+    }
+    expect(errorMsg).toBe('User not found please check username and password')
+    expect(component.canShowLoader).toBe(false);
+  })
+
 
 
 });

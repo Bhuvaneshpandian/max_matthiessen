@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
-import {Subject } from 'rxjs';
+import {Observable, Subject } from 'rxjs';
 import { PensionSchemeScreen } from 'src/model/Pension.model';
+import { environment } from 'src/environment';
+import { HttpClient } from '@angular/common/http';
+import { PensionChartModel } from 'src/model/PensionChart.model';
 
 export const popScreenInfo = {
   recomSrc: false,
@@ -15,8 +18,10 @@ export const popScreenInfo = {
 export class PensionReccomSchemeService {
 
    userSubject = new Subject<PensionSchemeScreen>();
+   pensionChartInfo = new Observable<PensionChartModel>
 
-  constructor() {
+
+  constructor(private http:HttpClient) {
   }
 
   setPopScreenInfo(screenInfo: PensionSchemeScreen){
@@ -28,6 +33,19 @@ export class PensionReccomSchemeService {
 
   getPensionScreenInfo():Subject<PensionSchemeScreen>{
       return this.userSubject
+  }
+
+  setPensionInfo(){
+      this.pensionChartInfo = this.http.get<PensionChartModel>(`${environment.url}/pension`)
+
+  }
+
+  getPensionData(){
+    return this.pensionChartInfo
+  }
+
+   updatePensionData(payLoad: PensionChartModel):Observable<PensionChartModel>{
+      return this.http.post<PensionChartModel>(`${environment.url}/pension`, payLoad);
   }
 
 }

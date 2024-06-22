@@ -2,6 +2,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { Login } from 'src/model/Login.model';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environment';
+import { CapacitorConfig } from '@capacitor/cli';
 
 @Injectable({
   providedIn: 'root'
@@ -16,12 +17,12 @@ export class LoginServiceService implements OnInit {
 
 
   }
-  async login(payLoad: Login, users: Login[]) {
+  async login(payLoad: Login, users: Login[]):Promise <string> {
     const user = this.getValidateUser(payLoad, users)
     if (user.length) {
       return "Login Successfully"
     }
-    throw Error('User not found please check username and password');
+     throw Error('User not found please check username and password');
   }
 
   async createNewUser(payLoad: Login, users: Login[]) {

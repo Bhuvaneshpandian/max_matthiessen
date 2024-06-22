@@ -1,44 +1,80 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PensionChartModel } from 'src/model/PensionChart.model';
 import { PensionReccomSchemeService } from 'src/services/pension-reccom-scheme.service';
-
 
 @Component({
   selector: 'app-increase-pension',
   templateUrl: './increase-pension.component.html',
-  styleUrls: ['./increase-pension.component.css']
+  styleUrls: ['./increase-pension.component.css'],
 })
-export class IncreasePensionComponent {
+export class IncreasePensionComponent implements OnInit {
   range: any = 7;
 
-  chartOptions = {
-    animationEnabled: false,
-    backgroundColor: "rgba(0, 0, 0, 0)",
-    zoomEnabled: false,
-    data: [{
+  pensionData: PensionChartModel = {
+    monthlyPensionAmt: 0,
+    totalPensionAmount: 0,
+    Recommended: 0,
+    chartOptions: {},
+  };
 
-      type: "doughnut",
-      yValueFormatString: "#,###.##'%'",
-      colors: ['#ff6347', '#4682b4', '#32cd32'],
-      dataPoints: [
-        { y: 28, name: "Pensions", color: "#D3D3D3" },
-        { y: 20, name: "Insurances", color: "#0099FF" },
-        { y: 15, name: "License", color: "#D3D3D3" },
-        { y: 23, name: "Cash", color: "#D3D3D3" },
-        { y: 12, name: "Real estate", color: "#D3D3D3" },
-        { y: 12, name: "Equity", color: "#D3D3D3" }
-      ]
-    }]
-  }
+  canShowSpinner:boolean = false;
 
   constructor(private pensionService: PensionReccomSchemeService) { }
+
+  ngOnInit(): void {
+    this.pensionService.setPensionInfo()
+    this.fetchPensionData();
+  }
+
+  fetchPensionData() {
+    this.canShowSpinner = true
+    this.pensionService.getPensionData().subscribe({
+      next: (pensionData) => {
+        this.pensionData = pensionData;
+      },
+      error: (error) => {
+        console.log(error);
+      },
+      complete: () => {
+        this.canShowSpinner = false
+      },
+    });
+  }
+
   isDisable() {
     if (this.range != 7) {
-      return false
+      return false;
     }
-    return true
+    return true;
   }
 
   onRangeChange() {
-    this.pensionService.setPopScreenInfo({ recomSrc: false, pension: false, popup: true })
+    this.canShowSpinner = true
+    this.pensionService.updatePensionData(this.pensionData).subscribe({
+      next:(pesnionInfo)=>{
+        this.pensionService.setPensionInfo()
+      },
+      error:(error)=>{
+        console.log(error);
+
+      },
+      complete:()=>{
+        this.canShowSpinner = false
+
+        this.pensionService.setPopScreenInfo({
+          recomSrc: false,
+          pension: false,
+          popup: true,
+        });
+      }
+    })
+  }
+
+  onInputRange() {
+    let number = this.pensionData.monthlyPensionAmt;
+    let increment = number * (this.range / 100);
+    let result = number + increment;
+    this.pensionData.monthlyPensionAmt = Math.round(result);
+    this.pensionData.Recommended = Math.round(this.pensionData.Recommended + result);
   }
 }
