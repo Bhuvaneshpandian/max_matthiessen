@@ -46,7 +46,7 @@
 <div class="row range-conatiner">
   <div class="col-10 pt-4">Pension Contribution</div>
   <div class="col-2 pt-4">
-    %{{ range }}
+    %{{ pensionData.range }}
     <hr />
   </div>
   <div class="col-12 pt-4 mb-4">
@@ -54,11 +54,11 @@
       type="range"
       min="0"
       max="25"
-      value="7"
+      value={{pensionData.range}}
       class="slider"
       id="myRange"
       (input)="onInputRange()"
-      [(ngModel)]="range"
+      [(ngModel)]="pensionData.range"
     />
     <div class="scale">
       <div><span class="line">|</span> 0</div>
@@ -75,7 +75,7 @@
   <div class="col-12">
     <button
       class="apply-btn"
-      [disabled]="isDisable()"
+      [disabled]="isDisable"
       (click)="onRangeChange()"
     >
       Apply

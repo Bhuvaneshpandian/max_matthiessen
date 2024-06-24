@@ -1,7 +1,9 @@
 export interface PensionChartModel {
+  id?:string,
   monthlyPensionAmt: number,
   totalPensionAmount: number,
   Recommended: number,
-  chartOptions: {}
+  chartOptions: {},
+  range:number
 
 }

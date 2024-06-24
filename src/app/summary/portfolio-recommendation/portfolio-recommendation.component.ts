@@ -14,7 +14,7 @@ export class PortfolioRecommendationComponent {
   constructor(private recScreenService: PensionReccomSchemeService) {
     setTimeout(() => {
       this.canShowThis = true
-    }, 2000)
+    }, 500)
   }
 
 

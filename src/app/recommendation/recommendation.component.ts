@@ -63,7 +63,7 @@ export class RecommendationComponent {
   }
 
   onCancelClick() {
-    this.recScreenService.setPopScreenInfo({ recomSrc: false, popup: false, pension: false })
+    this.recScreenService.setPopScreenInfo({ recomSrc: false, popup: false, pension: true })
 
   }
 }

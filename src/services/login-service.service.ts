@@ -28,7 +28,7 @@ export class LoginServiceService implements OnInit {
   async createNewUser(payLoad: Login, users: Login[]) {
     const user = this.getValidateUser(payLoad, users)
     if (!user.length) {
-      return this.http.post(`${environment.url}/users`, payLoad).toPromise();
+      return this.http.post(`${environment.url}/users`, payLoad);
     }
     throw Error('UserName already exsits!');
   }

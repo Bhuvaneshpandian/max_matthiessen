@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Chart,registerables  } from 'chart.js';
+import { Chart, registerables } from 'chart.js';
 import { SummaryService } from 'src/services/summary.service';
 
 @Component({
@@ -10,25 +10,18 @@ import { SummaryService } from 'src/services/summary.service';
 })
 export class OverviewComponent {
 
-  chart={}
-  chartOptions={}
+  chart = {}
+  chartOptions = {}
 
-  constructor(private summaryService:SummaryService) {
-    //Chart.register(...registerables);
+  constructor(private summaryService: SummaryService) {
   }
 
   ngOnInit(): void {
     this.createChart();
   }
 
-
-
-
-
   createChart() {
-    this.chartOptions =this.summaryService.getSummaryChatData()
-    // this.chart = new Chart("MyChart", this.summaryService.getSummaryChatData());
+    this.chartOptions = this.summaryService.getSummaryChatData()
   }
-
 
 }

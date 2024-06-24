@@ -5,69 +5,112 @@
       "userName": "bhuvanesh",
       "password": "1234",
       "idType": "bankId"
+    }
+  ],
+  "recommendation": [
+    {
+      "heading": "Increase monthly pension contribution",
+      "details": "Our analysis shows that you have the capacity to increase your monthly pension contributions by 10%. This will bolster your retirement savings, ensuring a more comfortable future.",
+      "id": "f47e"
     },
     {
-      "id": "a0fe",
-      "userName": "wwq",
-      "password": "swqd",
-      "idType": "bankId"
+      "heading": "Increase Emergency Fund Allocation",
+      "details": "Allocating an additional 5% to his emergency fund will provide greater financial security, especially considering his risk-averse approach to investing.",
+      "id": "7879"
     },
     {
-      "id": "a2a0",
-      "userName": "wqw",
-      "password": "wqwq",
-      "idType": "bankId"
+      "heading": "Tax-Efficient Investing Strategy",
+      "details": "Implementing a tax-efficient strategy by maximizing contributions to ISAs or SIPPs can optimize his tax savings and enhance overall portfolio growth, aligning with his goal of minimizing tax liabilities.",
+      "id": "809e"
     },
     {
-      "id": "9bdd",
-      "userName": "fwerfewrfw",
-      "password": "fwfwer",
-      "idType": "bankId"
-    },
-    {
-      "id": "7367",
-      "userName": "bhuvanesh",
-      "password": "1234",
-      "idType": "bankId"
-    },
-    {
-      "id": "d34b",
-      "userName": "ewde",
-      "password": "edfe",
-      "idType": "bankId"
-    },
-    {
-      "id": "6b93",
-      "userName": "bbjhb",
-      "password": "nknm",
-      "idType": "bankId"
+      "heading": "Book an advisor appointment ",
+      "details": "Our advisors can review your current portfolio, assess your risk tolerance, and develop a tailored plan to help you achieve your financial objectives more effectively.",
+      "id": "5ebc"
     }
   ],
   "dashboardContent": [
     {
       "heading": "The Private Service",
       "content": "Simplify and optimize your financial management with a comprehensive, user-friendly dashboard",
-      "id": "2a3a"
+      "id": "e43e"
     },
     {
       "heading": "MSave",
       "content": "Securely build and manage your savings effortlessly with our intuitive digital platform",
-      "id": "87fb"
+      "id": "1305"
     },
     {
       "heading": "Max Funds",
       "content": "Invest wisely with Max Funds, offering tailored fund options designed to maximize your returns",
-      "id": "5dff"
+      "id": "7e24"
     },
     {
       "heading": "Advice4Life",
       "content": "Personalized, lifelong financial planning to secure your future, every step of the way",
-      "id": "8789"
+      "id": "7f68"
     },
     {
       "heading": "The Private Service",
       "content": "Simplify and optimize your financial management with a comprehensive, user-friendly dashboard",
-      "id": "ba60"
+      "id": "fcc3"
+    }
+  ],
+  "pension": [
+    {
+      "id": "c5db",
+      "monthlyPensionAmt": 502,
+      "totalPensionAmount": 16800,
+      "Recommended": 92930,
+      "range": 18,
+      "chartOptions": {
+        "animationEnabled": false,
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "zoomEnabled": false,
+        "data": [
+          {
+            "type": "doughnut",
+            "yValueFormatString": "#,###.##'%'",
+            "colors": [
+              "#ff6347",
+              "#4682b4",
+              "#32cd32"
+            ],
+            "dataPoints": [
+              {
+                "y": 28,
+                "name": "Pensions",
+                "color": "#D3D3D3"
+              },
+              {
+                "y": 20,
+                "name": "Insurances",
+                "color": "#0099FF"
+              },
+              {
+                "y": 15,
+                "name": "License",
+                "color": "#D3D3D3"
+              },
+              {
+                "y": 23,
+                "name": "Cash",
+                "color": "#D3D3D3"
+              },
+              {
+                "y": 12,
+                "name": "Real estate",
+                "color": "#D3D3D3"
+              },
+              {
+                "y": 12,
+                "name": "Equity",
+                "color": "#D3D3D3"
+              }
+            ]
+          }
+        ]
+      }
     }
   ]
 }

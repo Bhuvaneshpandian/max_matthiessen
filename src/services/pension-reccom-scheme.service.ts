@@ -18,7 +18,7 @@ export const popScreenInfo = {
 export class PensionReccomSchemeService {
 
    userSubject = new Subject<PensionSchemeScreen>();
-   pensionChartInfo = new Observable<PensionChartModel>
+   pensionChartInfo = new Observable<PensionChartModel[]>
 
 
   constructor(private http:HttpClient) {
@@ -36,7 +36,7 @@ export class PensionReccomSchemeService {
   }
 
   setPensionInfo(){
-      this.pensionChartInfo = this.http.get<PensionChartModel>(`${environment.url}/pension`)
+      this.pensionChartInfo = this.http.get<PensionChartModel[]>(`${environment.url}/pension`)
 
   }
 
@@ -45,7 +45,7 @@ export class PensionReccomSchemeService {
   }
 
    updatePensionData(payLoad: PensionChartModel):Observable<PensionChartModel>{
-      return this.http.post<PensionChartModel>(`${environment.url}/pension`, payLoad);
+      return this.http.put<PensionChartModel>(`${environment.url}/pension/${payLoad.id}`, payLoad);
   }
 
 }

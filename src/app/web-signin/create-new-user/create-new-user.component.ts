@@ -38,13 +38,11 @@ export class CreateNewUserComponent {
         if (payload.userName && payload.password) {
          await this.loginService.createNewUser({ userName: payload.userName, password: payload.password,idType:payload.idType},this.users)
           this.authService.login(payload?.userName, payload.password,payload.idType);
+          this.router.navigate(["/dashboard"])
         }
-        this.router.navigate(["/dashboard"])
-        return;
       }
     }
     catch (error: any) {
-      alert(JSON.stringify(error))
       console.log(error)
     }
   }

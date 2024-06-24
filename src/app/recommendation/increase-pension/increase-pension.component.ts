@@ -8,13 +8,14 @@ import { PensionReccomSchemeService } from 'src/services/pension-reccom-scheme.s
   styleUrls: ['./increase-pension.component.css'],
 })
 export class IncreasePensionComponent implements OnInit {
-  range: any = 7;
+  isDisable: boolean = true;
 
   pensionData: PensionChartModel = {
     monthlyPensionAmt: 0,
     totalPensionAmount: 0,
     Recommended: 0,
     chartOptions: {},
+    range:0
   };
 
   canShowSpinner:boolean = false;
@@ -29,8 +30,8 @@ export class IncreasePensionComponent implements OnInit {
   fetchPensionData() {
     this.canShowSpinner = true
     this.pensionService.getPensionData().subscribe({
-      next: (pensionData) => {
-        this.pensionData = pensionData;
+      next: (pensionData:PensionChartModel[]) => {
+        this.pensionData = pensionData[0];
       },
       error: (error) => {
         console.log(error);
@@ -41,17 +42,18 @@ export class IncreasePensionComponent implements OnInit {
     });
   }
 
-  isDisable() {
-    if (this.range != 7) {
-      return false;
-    }
-    return true;
-  }
+  // isDisable() {
+  //   if (this.pensionData.range != this.pensionData.range) {
+  //     return false;
+  //   }
+  //   return true;
+  // }
 
   onRangeChange() {
     this.canShowSpinner = true
     this.pensionService.updatePensionData(this.pensionData).subscribe({
       next:(pesnionInfo)=>{
+        this.pensionData = pesnionInfo;
         this.pensionService.setPensionInfo()
       },
       error:(error)=>{
@@ -71,8 +73,9 @@ export class IncreasePensionComponent implements OnInit {
   }
 
   onInputRange() {
+    this.isDisable  = false
     let number = this.pensionData.monthlyPensionAmt;
-    let increment = number * (this.range / 100);
+    let increment = number * (this.pensionData.range / 100);
     let result = number + increment;
     this.pensionData.monthlyPensionAmt = Math.round(result);
     this.pensionData.Recommended = Math.round(this.pensionData.Recommended + result);
