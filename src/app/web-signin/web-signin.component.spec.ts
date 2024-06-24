@@ -6,7 +6,6 @@ import { FormBuilder, FormGroupDirective } from '@angular/forms';
 import { AuthService } from 'src/services/auth.service';
 import { LoginServiceService } from 'src/services/login-service.service';
 import { Router } from '@angular/router';
-import { throwError } from 'rxjs';
 
 fdescribe('WebSigninComponent', () => {
   let component: WebSigninComponent;

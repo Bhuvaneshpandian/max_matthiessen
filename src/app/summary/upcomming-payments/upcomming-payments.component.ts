@@ -1,29 +1,32 @@
-import { Component } from '@angular/core';
-import { UpcomingPayment } from 'src/model/UpcomingPayement.model';
+import { Component, OnInit } from '@angular/core';
+import { UpcommingPayment } from 'src/model/UpcommingPayments.model';
+import { SummaryService } from 'src/services/summary.service';
 
 @Component({
   selector: 'app-upcomming-payments',
   templateUrl: './upcomming-payments.component.html',
   styleUrls: ['./upcomming-payments.component.css']
 })
-export class UpcommingPaymentsComponent {
+export class UpcommingPaymentsComponent implements OnInit {
 
-  upcomingPayment :UpcomingPayment[] = [
-    {
-      date: "09:05:2024",
-      paymentType: "Premium Due",
-      paymentLabel: "Life Insurance",
-      amount: 350,
-      tax: 105
-    },
-    {
-      date: "10:06:2024",
-      paymentType: "Premium Due",
-      paymentLabel: "Life Insurance",
-      amount: 350,
-      tax: 105
-    }
+  upcomingPayment :UpcommingPayment[] = []
 
-  ]
+  constructor(private summaryService:SummaryService){}
+
+  ngOnInit(): void {
+
+    this.summaryService.getUpcommingPayments().subscribe({
+      next:(result:UpcommingPayment[])=>{
+        this.upcomingPayment = result
+      },
+      error:(e)=>{
+        throw new Error (e.message)
+      },
+      complete:()=>{
+
+      }
+    })
+
+  }
 
 }

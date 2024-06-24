@@ -5,6 +5,12 @@
       "userName": "bhuvanesh",
       "password": "1234",
       "idType": "bankId"
+    },
+    {
+      "id": "58b1",
+      "userName": "pandian",
+      "password": "1234",
+      "idType": "bankId"
     }
   ],
   "recommendation": [
@@ -59,10 +65,10 @@
   "pension": [
     {
       "id": "c5db",
-      "monthlyPensionAmt": 502,
+      "monthlyPensionAmt": 2074,
       "totalPensionAmount": 16800,
-      "Recommended": 92930,
-      "range": 18,
+      "Recommended": 102826,
+      "range": 16,
       "chartOptions": {
         "animationEnabled": false,
         "backgroundColor": "rgba(0, 0, 0, 0)",
@@ -111,6 +117,68 @@
           }
         ]
       }
+    }
+  ],
+  "news": [
+    {
+      "image": "assets/new1.png",
+      "heading": "Apple's market cap closes above $3 trillion",
+      "news": "Apple's market cap closed at about $3 trillion for the first time since August after its shares climbed 2% to $193.42 per share on Tuesday.",
+      "id": "cb72"
+    },
+    {
+      "image": "assets/news2.png",
+      "heading": "Tesla shares drop 5% after HSBC initiates coverage, says sell",
+      "news": "Tesla shares declined by about 5% on Thursday to close at $209.98 after HSBC initiated coverage of the EV maker with a “reduce” rating and a price target of $146 per share.",
+      "id": "64d4"
+    },
+    {
+      "image": "assets/news3.png",
+      "heading": "Google launches its largest and ‘most capable’ AI model, Gemini",
+      "news": "Tesla shares declined by about 5% on Thursday to close at $209.98 after HSBC initiated coverage of the EV maker with a “reduce” rating and a price target of $146 per share.",
+      "id": "6d8e"
+    }
+  ],
+  "upcommingPayments": [
+    {
+      "image": "assets/calender.png",
+      "content": "Life Insurance",
+      "subContent": "Premium Due",
+      "price": "$350",
+      "subPrice": "$105",
+      "id": "afa3"
+    },
+    {
+      "image": "assets/calender.png",
+      "content": "Life Insurance",
+      "subContent": "Premium Due",
+      "price": "$450",
+      "subPrice": "$205",
+      "id": "9fef"
+    },
+    {
+      "image": "assets/calender.png",
+      "content": "Life Insurance",
+      "subContent": "Premium Due",
+      "price": "$550",
+      "subPrice": "$305",
+      "id": "6d4a"
+    },
+    {
+      "image": "assets/calender.png",
+      "content": "Life Insurance",
+      "subContent": "Premium Due",
+      "price": "$650",
+      "subPrice": "$405",
+      "id": "fc81"
+    },
+    {
+      "image": "assets/calender.png",
+      "content": "Life Insurance",
+      "subContent": "Premium Due",
+      "price": "$750",
+      "subPrice": "$505",
+      "id": "abc9"
     }
   ]
 }

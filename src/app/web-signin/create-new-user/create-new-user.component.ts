@@ -14,7 +14,7 @@ import { LoginServiceService } from 'src/services/login-service.service';
 export class CreateNewUserComponent {
 
   signInForm: FormGroup = new FormGroup({});
-  users:Login[] =[]
+  users: Login[] = []
 
 
   ngOnInit(): void {
@@ -24,21 +24,29 @@ export class CreateNewUserComponent {
       password: ['', Validators.required]
     });
 
-    this.loginService.fetchUsers().subscribe((user)=>{
+    this.loginService.fetchUsers().subscribe((user) => {
       this.users = user
     })
   }
 
-  constructor(private formBuilder: FormBuilder,private router: Router, private authService: AuthService, private loginService: LoginServiceService){}
+  constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService, private loginService: LoginServiceService) { }
 
   async onSubmit() {
     try {
       if (this.signInForm.valid) {
         const payload: User = { idType: this.signInForm.value.idType, userName: this.signInForm.value.userName, password: this.signInForm.value.password };
         if (payload.userName && payload.password) {
-         await this.loginService.createNewUser({ userName: payload.userName, password: payload.password,idType:payload.idType},this.users)
-          this.authService.login(payload?.userName, payload.password,payload.idType);
-          this.router.navigate(["/dashboard"])
+          this.loginService.createNewUser({ userName: payload.userName, password: payload.password, idType: payload.idType }, this.users).subscribe({
+            next: () => {
+              this.router.navigate(["/dashboard"])
+            },
+            error: (e) => {
+              throw new Error(e.message)
+            },
+            complete: () => {
+            }
+          })
+          this.authService.login(payload?.userName, payload?.password, payload.idType);
         }
       }
     }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PensionSchemeScreen } from 'src/model/Pension.model';
+import { AuthService } from 'src/services/auth.service';
 import { PensionReccomSchemeService } from 'src/services/pension-reccom-scheme.service';
 
 @Component({
@@ -8,21 +9,24 @@ import { PensionReccomSchemeService } from 'src/services/pension-reccom-scheme.s
   styleUrls: ['./summary.component.css']
 })
 export class SummaryComponent implements OnInit {
-canShowRecom:boolean = false;
-receivedRecommendation:any;
-showRecScreenInfo:PensionSchemeScreen={ recomSrc: false,pension: false,popup: false}
+  canShowRecom: boolean = false;
+  showRecScreenInfo: PensionSchemeScreen = { recomSrc: false, pension: false, popup: false }
+  userName: string = ""
+  receivedRecommendation:any
 
-constructor(private recScreenService:PensionReccomSchemeService){}
 
-ngOnInit(): void {
-this.recScreenService.getPensionScreenInfo().subscribe((value)=>{
-    this.showRecScreenInfo = value
-})
+  constructor(private recScreenService: PensionReccomSchemeService, private authService: AuthService) { }
 
-}
+  ngOnInit(): void {
+    this.userName = this.authService.getUserInfo().userName
+    this.recScreenService.getPensionScreenInfo().subscribe((value) => {
+      this.showRecScreenInfo = value
+    })
 
-onRecommendationChange(value: boolean) {
-  this.recScreenService.setPopScreenInfo({ recomSrc: true,pension: false,popup: false})
-}
+  }
+
+  onRecommendationChange(value: boolean) {
+    this.recScreenService.setPopScreenInfo({ recomSrc: true, pension: false, popup: false })
+  }
 
 }

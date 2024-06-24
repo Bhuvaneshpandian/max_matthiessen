@@ -3,6 +3,7 @@ import { Login } from 'src/model/Login.model';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environment';
 import { CapacitorConfig } from '@capacitor/cli';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +26,7 @@ export class LoginServiceService implements OnInit {
      throw Error('User not found please check username and password');
   }
 
-  async createNewUser(payLoad: Login, users: Login[]) {
+   createNewUser(payLoad: Login, users: Login[]):Observable<any> {
     const user = this.getValidateUser(payLoad, users)
     if (!user.length) {
       return this.http.post(`${environment.url}/users`, payLoad);
