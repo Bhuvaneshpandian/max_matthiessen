@@ -1,4 +1,8 @@
 
+<div class="error">
+  {{errorMessage}}
+</div>
+
 <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
   <div class="col-12 mt-3">
     <input
@@ -46,7 +50,7 @@
   <div class="col-12 mt-3">
     <div class="heading">Password</div>
     <input
-      type="text"
+      type="password"
       class="input-style"
       formControlName="password"
     />

@@ -9,7 +9,7 @@ import { Capacitor } from '@capacitor/core';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent{
 
   canShowWelcomePage: boolean = true;
   canShowLoginPage: boolean = false;
@@ -19,6 +19,8 @@ export class LoginComponent {
       this.canShowWelcomePage = false;
     }, 200)
   }
+
+
 
   async onLoginClick() {
      if (Capacitor.isNativePlatform()) {
@@ -66,6 +68,7 @@ export class LoginComponent {
     }
     catch (e) {
       console.error(e);
+      alert(JSON.stringify(e))
     }
   }
 

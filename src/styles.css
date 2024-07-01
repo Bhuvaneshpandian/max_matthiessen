@@ -7,44 +7,42 @@ body {
   overflow-x: hidden;
 }
 
-.popup-overlay {
+
+
+/* .donut > *,
+.donut > *::before,
+.donut > *::after {
+  margin-left: auto;
+  margin-right: auto;
+} */
+
+.canvasjs-chart-canvas{
+  left: 20%;
+}
+
+
+.canvasjs-chart-credit {
+  display: none;
+}
+
+/* .popup-overlay {
   .bar-chart {
     .canvasjs-chart-canvas {
       border: none !important;
       top: -203px;
     }
 
-    .canvasjs-chart-toolbar {
-      margin-left: auto !important;
-      margin-right: auto !important;
-    }
 
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin-left: auto !important;
-      margin-right: auto !important;
-    }
-
-    .canvasjs-chart-credit {
-      display: none;
-    }
 
 
   }
 
 
-}
+} */
 
-.canvasjs-chart-credit {
-  display: none;
-}
 
-#canvasjs-angular-chart-container-1 {
-  margin-left: auto;
-  margin-right: auto;
-}
+
+
 
 
 

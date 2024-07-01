@@ -164,14 +164,7 @@
   margin-right: auto;
 }
 
-.donut {
-  *,
-  *::before,
-  *::after {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
+
 
 button:disabled {
   background-color: #d3d3d3;
@@ -197,7 +190,8 @@ button:disabled {
 
 .pension-continer{
   position: relative;
-  bottom: 149px
+  bottom: 149px;
+  left: -1%;
 }
 
 .chart-cont{

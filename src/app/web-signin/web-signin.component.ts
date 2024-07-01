@@ -41,7 +41,7 @@ export class WebSigninComponent implements OnInit {
           this.users = users;
         },
         error: (error) => {
-          console.error('Error fetching users:', error);
+          throw Error(error.message);
         }
       });
     } catch (error) {

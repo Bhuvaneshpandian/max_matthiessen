@@ -27,9 +27,8 @@ export class DashboardContentComponent implements OnInit {
         this.dashboardContent = content;
       },
       error: (error) => {
-        alert(JSON.stringify(error.message))
-        console.error('Error fetching dashboard content:', error);
         this.dashboardContent = [];
+        throw Error ('Error fetching dashboard content:', error)
       },
       complete: () => {
         this.canShowLoader = false;

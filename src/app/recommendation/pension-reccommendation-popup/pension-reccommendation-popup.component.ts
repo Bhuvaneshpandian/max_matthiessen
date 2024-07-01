@@ -27,8 +27,8 @@ export class PensionReccommendationPopupComponent implements OnInit {
         this.recContent = content;
       },
       error: (error) => {
-        console.error('Error fetching dashboard content:', error);
         this.recContent = [];
+        throw Error (error.message)
       },
       complete: () => {
         this.canShowLoader = false

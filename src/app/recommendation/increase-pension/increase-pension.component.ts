@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { PensionChartModel } from 'src/model/PensionChart.model';
 import { PensionReccomSchemeService } from 'src/services/pension-reccom-scheme.service';
 
@@ -7,7 +7,7 @@ import { PensionReccomSchemeService } from 'src/services/pension-reccom-scheme.s
   templateUrl: './increase-pension.component.html',
   styleUrls: ['./increase-pension.component.css'],
 })
-export class IncreasePensionComponent implements OnInit {
+export class IncreasePensionComponent implements OnInit,OnChanges {
   isDisable: boolean = true;
 
   pensionData: PensionChartModel = {
@@ -27,6 +27,12 @@ export class IncreasePensionComponent implements OnInit {
     this.fetchPensionData();
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+
+    console.log(changes)
+
+  }
+
   fetchPensionData() {
     this.canShowSpinner = true
     this.pensionService.getPensionData().subscribe({
@@ -34,7 +40,7 @@ export class IncreasePensionComponent implements OnInit {
         this.pensionData = pensionData[0];
       },
       error: (error) => {
-        console.log(error);
+        throw Error (error.message)
       },
       complete: () => {
         this.canShowSpinner = false
@@ -42,12 +48,7 @@ export class IncreasePensionComponent implements OnInit {
     });
   }
 
-  // isDisable() {
-  //   if (this.pensionData.range != this.pensionData.range) {
-  //     return false;
-  //   }
-  //   return true;
-  // }
+
 
   onRangeChange() {
     this.canShowSpinner = true
@@ -57,8 +58,7 @@ export class IncreasePensionComponent implements OnInit {
         this.pensionService.setPensionInfo()
       },
       error:(error)=>{
-        console.log(error);
-
+        throw Error (error.message)
       },
       complete:()=>{
         this.canShowSpinner = false

@@ -15,6 +15,7 @@ export class CreateNewUserComponent {
 
   signInForm: FormGroup = new FormGroup({});
   users: Login[] = []
+  errorMessage: string = ""
 
 
   ngOnInit(): void {
@@ -51,6 +52,7 @@ export class CreateNewUserComponent {
       }
     }
     catch (error: any) {
+      this.errorMessage = error.message
       console.log(error)
     }
   }
