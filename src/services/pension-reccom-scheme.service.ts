@@ -37,6 +37,7 @@ export class PensionReccomSchemeService {
 
   setPensionInfo(){
       this.pensionChartInfo = this.http.get<PensionChartModel[]>(`${environment.url}/pension`)
+      
 
   }
 

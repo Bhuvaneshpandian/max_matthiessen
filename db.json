@@ -65,10 +65,10 @@
   "pension": [
     {
       "id": "c5db",
-      "monthlyPensionAmt": 2074,
+      "monthlyPensionAmt": 5025,
       "totalPensionAmount": 16800,
-      "Recommended": 102826,
-      "range": 16,
+      "Recommended": 121206,
+      "range": 19,
       "chartOptions": {
         "animationEnabled": false,
         "backgroundColor": "rgba(0, 0, 0, 0)",

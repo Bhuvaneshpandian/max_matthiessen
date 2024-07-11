@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable, fromEvent } from 'rxjs';
+import { StatusBar, Style } from '@capacitor/status-bar';
+
 
 @Component({
   selector: 'app-root',
@@ -11,16 +13,13 @@ export class AppComponent {
 
   constructor() {
 
-    this.fromEvent(document.body, 'resize').subscribe((value) => {
-      console.log(value)
-
-    })
-
+this.hideStatusbar()
   }
 
-  fromEvent(target: any, eventName: string): Observable<Event> {
-    return fromEvent(target, eventName);
+  async hideStatusbar(){
+await StatusBar.hide()
   }
+
 
 
 }

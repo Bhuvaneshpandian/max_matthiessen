@@ -25,6 +25,8 @@ export class IncreasePensionComponent implements OnInit,OnChanges {
   ngOnInit(): void {
     this.pensionService.setPensionInfo()
     this.fetchPensionData();
+    console.log("bhuvbanesh")
+
   }
 
   ngOnChanges(changes: SimpleChanges): void {
